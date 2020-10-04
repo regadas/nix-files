@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
-{
+let
+  pkgsAlt = ./pkgs;
+  openfortivpn.alt = pkgs.callPackage (pkgsAlt + "/openfortivpn") { };
+in {
 
   nixpkgs.overlays = [
     (self: super: {
@@ -138,7 +141,7 @@
     vscode
     protobuf
     scalafmt
-    # openforivpn
+    openfortivpn.alt
   ];
 
   # Home Manager needs a bit of information about you and the
