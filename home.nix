@@ -108,6 +108,7 @@
   home.packages = with pkgs; [
     go
     python3
+    python38Packages.pip
     alacritty
     bat
     bazelisk
