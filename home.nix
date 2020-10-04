@@ -136,6 +136,7 @@
     emacs
     vscode
     protobuf
+    scalafmt
     # openforivpn
   ];
 
