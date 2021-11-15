@@ -2,7 +2,7 @@
 
 let
   pkgsAlt = ./pkgs;
-  openfortivpn.alt = pkgs.callPackage (pkgsAlt + "/openfortivpn") { };
+  #openfortivpn.alt = pkgs.callPackage (pkgsAlt + "/openfortivpn") { };
 in {
 
   nixpkgs.overlays = [
@@ -24,10 +24,10 @@ in {
     enable = true;
     userName = "regadas";
     userEmail = "filiperegadas@gmail.com";
-    signing = {
-      key = "1BD40BCB6DD329D0";
-      signByDefault = true;
-    };
+    #signing = {
+    #  key = "1BD40BCB6DD329D0";
+    #  signByDefault = true;
+    #};
     aliases = {
       s = "status";
       l =
@@ -112,7 +112,7 @@ in {
     go
     python3
     python38Packages.pip
-    alacritty
+    #alacritty
     bat
     bazelisk
     curl
@@ -133,15 +133,17 @@ in {
     jdk
     sbt
     (scala.override { jre = jdk; })
-    dotty
+    #dotty
     kubernetes
     minikube
     google-cloud-sdk
-    emacs
-    vscode
+    #emacs
+    #vscode
     protobuf
     scalafmt
-    openfortivpn.alt
+    #openfortivpn.alt
+    delta
+    rust-analyzer
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -157,5 +159,5 @@ in {
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "20.09";
+  home.stateVersion = "21.11";
 }
