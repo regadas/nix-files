@@ -109,42 +109,42 @@ in {
   #      "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
   home.packages = with pkgs; [
-    go
-    python3
-    python38Packages.pip
     #alacritty
+    #dotty
+    #emacs
+    #openfortivpn.alt
+    #vscode
+    (scala.override { jre = jdk; })
     bat
     bazelisk
     curl
+    delta
     direnv
     gettext
     gitAndTools.hub
     gnupg
+    go
+    google-cloud-sdk
+    gradle
     htop
+    jdk
     jq
+    kubernetes
+    maven
+    minikube
     mosh
+    nixfmt
+    podman
+    protobuf
+    python3
+    python38Packages.pip
     ripgrep
+    rust-analyzer
+    sbt
+    scalafmt
     shellcheck
     silver-searcher
     tldr
-    nixfmt
-    gradle
-    maven
-    jdk
-    sbt
-    (scala.override { jre = jdk; })
-    #dotty
-    podman
-    kubernetes
-    minikube
-    google-cloud-sdk
-    #emacs
-    #vscode
-    protobuf
-    scalafmt
-    #openfortivpn.alt
-    delta
-    rust-analyzer
   ];
 
   # Home Manager needs a bit of information about you and the
