@@ -145,6 +145,7 @@ in {
     shellcheck
     silver-searcher
     tldr
+    kubectx
   ];
 
   # Home Manager needs a bit of information about you and the
