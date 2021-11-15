@@ -134,6 +134,7 @@ in {
     sbt
     (scala.override { jre = jdk; })
     #dotty
+    podman
     kubernetes
     minikube
     google-cloud-sdk
