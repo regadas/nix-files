@@ -37,9 +37,7 @@
     enable = true;
     enableCompletion = false;
   };
-  environment.systemPackages = with pkgs; [
-    alacritty
-  ];
+  environment.systemPackages = with pkgs; [ alacritty vscode ];
 
   home-manager.users.regadas = (import ~/.nixpkgs/home.nix);
 }
