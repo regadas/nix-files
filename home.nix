@@ -124,6 +124,7 @@ in {
     direnv
     fzf
     gettext
+    gh
     gitAndTools.hub
     gnupg
     go
