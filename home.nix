@@ -131,6 +131,9 @@ in {
     htop
     jdk
     jq
+    kind
+    kustomize
+    kubebuilder
     kubectx
     kubernetes
     maven
