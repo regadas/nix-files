@@ -7,8 +7,8 @@ in {
 
   nixpkgs.overlays = [
     (self: super: {
-      jre = pkgs.jdk11;
-      jdk = pkgs.jdk11;
+      jre = pkgs.graalvm11-ce;
+      jdk = pkgs.graalvm11-ce;
     })
   ];
 
