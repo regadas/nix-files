@@ -122,6 +122,7 @@ in {
     curl
     delta
     direnv
+    fzf
     gettext
     gitAndTools.hub
     gnupg
