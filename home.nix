@@ -26,10 +26,10 @@ in {
     enable = true;
     userName = "regadas";
     userEmail = "filiperegadas@gmail.com";
-    #signing = {
-    #  key = "1BD40BCB6DD329D0";
-    #  signByDefault = true;
-    #};
+    signing = {
+      key = "2572CF0C";
+      signByDefault = true;
+    };
     aliases = {
       s = "status";
       l =
