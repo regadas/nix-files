@@ -82,7 +82,10 @@ in {
     '';
   };
 
-  programs.fzf.enable = true;
+  programs.mcfly = {
+    enable = true;
+    enableLightTheme = false;
+  };
 
   programs.zsh = {
     enable = true;
