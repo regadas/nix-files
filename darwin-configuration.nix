@@ -19,9 +19,9 @@
 
   services.nix-daemon.enable = true;
 
-  services.yabai.enable = false;
+  services.yabai.enable = true;
   services.yabai.package = pkgs.yabai;
-  services.skhd.enable = false;
+  services.skhd.enable = true;
 
   # programs.gnupg.agent.enable = true;
   # programs.gnupg.agent.enableSSHSupport = true;
