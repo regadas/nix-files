@@ -112,6 +112,7 @@ in {
 
   #programs.zsh.initExtraBeforeCompInit =
   #      "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  programs.java.enable = true;
 
   home.packages = with pkgs; [
     #alacritty
