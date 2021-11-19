@@ -112,6 +112,8 @@ in {
 
   #programs.zsh.initExtraBeforeCompInit =
   #      "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  programs.direnv.enable = true;
+
   programs.java.enable = true;
 
   home.packages = with pkgs; [
@@ -125,7 +127,6 @@ in {
     bazelisk
     curl
     delta
-    direnv
     fzf
     gettext
     gh
