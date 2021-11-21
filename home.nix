@@ -160,6 +160,11 @@ in {
     shellcheck
     silver-searcher
     tldr
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodePackages.yarn
+    nodePackages.mermaid-cli
+    nodePackages.sql-formatter
     wget
   ];
 
