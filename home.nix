@@ -166,6 +166,7 @@ in {
     nodePackages.mermaid-cli
     nodePackages.sql-formatter
     wget
+    yq-go
   ];
 
   # Home Manager needs a bit of information about you and the
