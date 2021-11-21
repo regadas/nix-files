@@ -133,6 +133,7 @@ in {
     gitAndTools.hub
     gnupg
     go
+    gopls
     google-cloud-sdk
     gradle
     htop
