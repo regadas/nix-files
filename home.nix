@@ -152,6 +152,7 @@ in {
     protobuf
     python3
     python38Packages.pip
+    python38Packages.jupyterlab
     ripgrep
     rust-analyzer
     sbt
