@@ -132,8 +132,9 @@ in {
     gh
     gitAndTools.hub
     gnupg
-    go
+    go_1_17
     gopls
+    golangci-lint
     google-cloud-sdk
     gradle
     htop
