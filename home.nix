@@ -161,6 +161,7 @@ in {
     shellcheck
     silver-searcher
     tldr
+    nodejs-16_x
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.yarn
