@@ -116,6 +116,7 @@ in {
 
   programs.java.enable = true;
 
+    broot.enable = true;
     alacritty.enable = true;
     vscode.enable = true;
   home.packages = with pkgs; [
