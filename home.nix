@@ -117,6 +117,10 @@ in {
   programs.java.enable = true;
 
     broot.enable = true;
+    bat = {
+      enable = true;
+      config.theme = "ansi";
+    };
     alacritty.enable = true;
     vscode.enable = true;
   home.packages = with pkgs; [
