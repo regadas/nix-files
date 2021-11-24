@@ -116,6 +116,8 @@ in {
 
   programs.java.enable = true;
 
+    alacritty.enable = true;
+    vscode.enable = true;
   home.packages = with pkgs; [
     #alacritty
     #dotty
