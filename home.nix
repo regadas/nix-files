@@ -116,13 +116,23 @@ in {
 
   programs.java.enable = true;
 
+  programs = {
     broot.enable = true;
+
     bat = {
       enable = true;
       config.theme = "ansi";
     };
+
+    emacs = {
+      enable = true;
+      package = pkgs.emacsMacport;
+    };
+
     alacritty.enable = true;
     vscode.enable = true;
+  };
+
   home.packages = with pkgs; [
     #alacritty
     #dotty
