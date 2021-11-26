@@ -82,11 +82,6 @@ in {
     '';
   };
 
-  programs.mcfly = {
-    enable = true;
-    enableLightTheme = false;
-  };
-
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -128,6 +123,8 @@ in {
       enable = true;
       package = pkgs.emacsMacport;
     };
+
+    fzf.enable = true;
 
     alacritty.enable = true;
     vscode.enable = true;
