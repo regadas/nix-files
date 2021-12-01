@@ -151,6 +151,7 @@ in {
     golangci-lint
     google-cloud-sdk
     gradle
+    graphviz-nox
     htop
     jdk
     jq
