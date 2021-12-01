@@ -183,6 +183,7 @@ in {
     nodePackages.sql-formatter
     wget
     yq-go
+    pandoc
   ];
 
   # Home Manager needs a bit of information about you and the
