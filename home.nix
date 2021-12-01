@@ -166,9 +166,8 @@ in {
     nixfmt
     podman
     protobuf
-    python3
-    python38Packages.pip
-    python38Packages.jupyterlab
+    (python38.withPackages
+      (ps: with ps; with python38Packages; [ pip ipykernel ipython ]))
     ripgrep
     rust-analyzer
     sbt
