@@ -139,6 +139,7 @@ in {
     (scala.override { jre = jdk; })
     bat
     bazelisk
+    cargo
     curl
     delta
     fzf
@@ -184,6 +185,7 @@ in {
     wget
     yq-go
     pandoc
+    nixpkgs-fmt
   ];
 
   # Home Manager needs a bit of information about you and the
