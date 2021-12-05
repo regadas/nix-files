@@ -133,7 +133,7 @@ in
   home.packages = with pkgs; [
     (scala.override { jre = jdk; })
     bazelisk
-    cargo
+    # cargo
     curl
     delta
     fzf
@@ -165,6 +165,7 @@ in
       (ps: with ps; with python38Packages; [ pip ipykernel ipython ]))
     ripgrep
     rust-analyzer
+    rustup
     sbt
     scalafmt
     shellcheck
