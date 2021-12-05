@@ -176,6 +176,7 @@ in {
     nodePackages.yarn
     nodePackages.mermaid-cli
     nodePackages.sql-formatter
+    nodePackages.prettier
     wget
     yq-go
     pandoc
