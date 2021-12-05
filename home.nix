@@ -131,11 +131,6 @@ in {
   };
 
   home.packages = with pkgs; [
-    #alacritty
-    #dotty
-    #emacs
-    #openfortivpn.alt
-    #vscode
     (scala.override { jre = jdk; })
     bat
     bazelisk
