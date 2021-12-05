@@ -132,7 +132,6 @@ in {
 
   home.packages = with pkgs; [
     (scala.override { jre = jdk; })
-    bat
     bazelisk
     cargo
     curl
