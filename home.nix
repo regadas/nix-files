@@ -181,8 +181,10 @@ in
     nodePackages.prettier
     wget
     yq-go
+    # editorconfig-checker
     pandoc
     nixpkgs-fmt
+    metals
   ];
 
   # Home Manager needs a bit of information about you and the
