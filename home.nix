@@ -137,6 +137,7 @@ in
     curl
     delta
     fzf
+    gdb
     gettext
     gh
     gitAndTools.hub
