@@ -10,6 +10,10 @@ in
       jre = pkgs.graalvm11-ce;
       jdk = pkgs.graalvm11-ce;
     })
+    (import (builtins.fetchTarball {
+      url =
+        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+    }))
   ];
 
   nixpkgs.config.allowUnfree = true;
