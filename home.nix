@@ -3,8 +3,7 @@
 let
   pkgsAlt = ./pkgs;
   #openfortivpn.alt = pkgs.callPackage (pkgsAlt + "/openfortivpn") { };
-in
-{
+in {
   nixpkgs.overlays = [
     (self: super: {
       jre = pkgs.graalvm11-ce;
