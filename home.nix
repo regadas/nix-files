@@ -121,7 +121,7 @@ in {
 
     emacs = {
       enable = true;
-      package = pkgs.emacsMacport;
+      package = pkgs.emacsGcc;
     };
 
     fzf.enable = true;
