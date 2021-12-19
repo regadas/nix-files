@@ -42,11 +42,17 @@ in {
         l =
           "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       };
+
       extraConfig = {
-        rebase = { autoStash = true; };
-        pull = { rebase = true; };
-        hub = { host = "ghe.spotify.net"; };
+        color.ui = true;
+        branch.autosetuprebase = "always";
+        rebase.autoStash = true;
+        pull.rebase = true;
+        init.defaultBranch = "main";
+        push.default = "tracking";
+        hub.host = "ghe.spotify.net";
       };
+
       ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ];
     };
 
