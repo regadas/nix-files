@@ -132,6 +132,15 @@ in {
     direnv.enable = true;
   };
 
+  home.sessionVariables = {
+    LANG = "en_US.UTF-8";
+    LC_CTYPE = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
+    EDITOR = "emacs";
+    PAGER = "less -FirSwX";
+    MANPAGER = "less -FirSwX";
+  };
+
   home.packages = with pkgs; [
     (scala.override { jre = jdk; })
     bazelisk
