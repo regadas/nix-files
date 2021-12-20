@@ -27,16 +27,29 @@ in {
       enable = true;
       viAlias = true;
       vimAlias = true;
+      plugins = with pkgs; [
+        vimPlugins.ctrlp
+        vimPlugins.vim-airline
+        vimPlugins.vim-airline-themes
+        vimPlugins.vim-eunuch
+        vimPlugins.vim-gitgutter
+
+        vimPlugins.vim-markdown
+        vimPlugins.vim-nix
+        vimPlugins.nvim-lspconfig
+      ];
     };
 
     git = {
       enable = true;
       userName = "regadas";
       userEmail = "filiperegadas@gmail.com";
+
       signing = {
         key = "2572CF0C";
         signByDefault = true;
       };
+
       aliases = {
         s = "status";
         l =
