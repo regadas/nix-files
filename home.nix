@@ -33,10 +33,10 @@ in {
         vimPlugins.vim-airline-themes
         vimPlugins.vim-eunuch
         vimPlugins.vim-gitgutter
-
         vimPlugins.vim-markdown
         vimPlugins.vim-nix
         vimPlugins.nvim-lspconfig
+        vimPlugins.telescope-nvim
       ];
     };
 
