@@ -149,6 +149,10 @@ in {
     vscode.enable = true;
     java.enable = true;
     direnv.enable = true;
+    texlive = {
+      enable = true;
+      extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
+    };
   };
 
   home.sessionVariables = {
