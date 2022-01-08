@@ -170,6 +170,7 @@ in {
 
   home.packages = with pkgs; [
     (scala.override { jre = jdk; })
+    scala-cli
     bazelisk
     # cargo
     curl
