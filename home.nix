@@ -153,6 +153,10 @@ in {
       enable = true;
       extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
     };
+    exa = {
+      enable = true;
+      enableAliases = true;
+    };
   };
 
   home.sessionVariables = {
