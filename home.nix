@@ -175,6 +175,7 @@ in {
     # cargo
     curl
     delta
+    duf
     fzf
     gdb
     gettext
