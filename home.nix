@@ -225,6 +225,7 @@ in {
     pandoc
     nixpkgs-fmt
     metals
+    llvm
   ];
 
   # Home Manager needs a bit of information about you and the
