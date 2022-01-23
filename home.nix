@@ -1,13 +1,15 @@
 { config, lib, pkgs, ... }:
 
 let
+  pkgsUnstable = import <unstable> { };
   pkgsAlt = ./pkgs;
   #openfortivpn.alt = pkgs.callPackage (pkgsAlt + "/openfortivpn") { };
 in {
   nixpkgs.overlays = [
+    (self: super: { vscode = pkgsUnstable.vscode; })
     (self: super: {
-      jre = pkgs.graalvm11-ce;
-      jdk = pkgs.graalvm11-ce;
+      jre = pkgs.jdk11;
+      jdk = pkgs.jdk11;
     })
     (import (builtins.fetchTarball {
       url =
@@ -75,8 +77,24 @@ in {
       baseIndex = 1;
       keyMode = "vi";
       shortcut = "s";
+      plugins = with pkgs.tmuxPlugins; [
+        sensible
+        yank
+        {
+          plugin = dracula;
+          extraConfig = ''
+            set -g @dracula-plugins "cpu-usage gpu-usage ram-usage"
+            set -g @dracula-show-battery false
+            set -g @dracula-show-powerline false
+            set -g @dracula-refresh-rate 10
+            # set -g @dracula-show-left-icon window
+          '';
+        }
+      ];
 
       extraConfig = ''
+        set -g mouse on
+
         # act like vim
         bind-key h select-pane -L
         bind-key j select-pane -D
@@ -88,15 +106,6 @@ in {
         # set -g prefix2 C-s
         # renumber windows sequentially after closing any of them
         set -g renumber-windows on
-
-
-        # soften status bar color from harsh green to light gray
-        set -g status-bg '#666666'
-        set -g status-fg '#aaaaaa'
-
-        # remove administrative debris (session name, hostname, time) in status bar
-        set -g status-left '''
-        set -g status-right '''
 
         # prefix -> back-one-character
         bind-key C-b send-prefix
