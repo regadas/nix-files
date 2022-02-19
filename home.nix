@@ -138,6 +138,9 @@ in {
           file = "p10k.zsh";
         }
       ];
+      initExtra = ''
+        export PATH=$PATH:$HOME/go/bin
+      '';
     };
 
     broot.enable = true;
@@ -233,7 +236,7 @@ in {
     # editorconfig-checker
     pandoc
     nixpkgs-fmt
-    metals
+    # metals
     llvm
   ];
 
