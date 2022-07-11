@@ -5,7 +5,6 @@
     # Package sets
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #nixpkgs-with-patched-kitty.url = github:azuwis/nixpkgs/kitty;
 
     # Environment/system management
     darwin.url = "github:lnl7/nix-darwin/master";
@@ -108,10 +107,6 @@
               system = "x86_64-darwin";
               inherit (nixpkgsConfig) config;
             };
-
-            # Get Apple Silicon version of `kitty`
-            # TODO: Remove when https://github.com/NixOS/nixpkgs/pull/137512 lands
-            #inherit (inputs.nixpkgs-with-patched-kitty.legacyPackages.aarch64-darwin) kitty;
           };
       };
 
