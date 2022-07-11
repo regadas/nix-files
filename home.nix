@@ -1,29 +1,20 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-let
-  pkgsUnstable = import <unstable> { };
-  pkgsAlt = ./pkgs;
-  #openfortivpn.alt = pkgs.callPackage (pkgsAlt + "/openfortivpn") { };
-in {
+{
+  home.stateVersion = "22.05";
+
   nixpkgs.overlays = [
-    (self: super: { vscode = pkgsUnstable.vscode; })
-    (self: super: {
-      jre = pkgs.jdk11;
-      jdk = pkgs.jdk11;
-    })
-    (import (builtins.fetchTarball {
-      url =
-        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-    }))
+    #(self: super: { vscode = pkgsUnstable.vscode; })
+    # (self: super: {
+    #   jre = pkgs.graalvm11-ce;
+    #   jdk = pkgs.graalvm11-ce;
+    # })
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
-  #programs.zsh.initExtraBeforeCompInit =
-  #      "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  # https://github.com/malob/nixpkgs/blob/master/home/default.nix
 
   programs = {
-    home-manager.enable = true;
+    htop.enable = true;
 
     neovim = {
       enable = true;
@@ -45,7 +36,7 @@ in {
     git = {
       enable = true;
       userName = "regadas";
-      userEmail = "filiperegadas@gmail.com";
+      userEmail = "oss@regadas.email";
 
       signing = {
         key = "2572CF0C";
@@ -139,120 +130,122 @@ in {
         }
       ];
       initExtra = ''
-        export PATH=$PATH:$HOME/go/bin
+        export PATH=$PATH:/opt/homebrew/bin:$HOME/go/bin
       '';
     };
 
-    broot.enable = true;
+    # broot.enable = true;
 
     bat = {
       enable = true;
       config.theme = "ansi";
     };
 
-    emacs = {
-      enable = true;
-      package = pkgs.emacsGcc;
-    };
-
     fzf.enable = true;
 
-    alacritty.enable = true;
-    vscode.enable = true;
-    java.enable = true;
-    direnv.enable = true;
-    texlive = {
+    #alacritty.enable = true;
+    #vscode.enable = true;
+    java = {
       enable = true;
-      extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
+      package = pkgs.graalvm11-ce;
     };
+
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
+    # texlive = {
+    #   enable = true;
+    #   extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
+    # };
     exa = {
       enable = true;
       enableAliases = true;
     };
   };
 
-  home.sessionVariables = {
-    LANG = "en_US.UTF-8";
-    LC_CTYPE = "en_US.UTF-8";
-    LC_ALL = "en_US.UTF-8";
-    EDITOR = "emacsclient";
-    PAGER = "less -FirSwX";
-    MANPAGER = "less -FirSwX";
-  };
+  home.packages = with pkgs;
+    [
+      deno
+      yarn2nix
+      ditaa
+      # hugo
+      imagemagick
+      leiningen
+      parallel
+      avro-tools
+      ripgrep
+      coreutils
+      gnused
+      emacsUnstable
+      cmake
+      #libtool
+      watch
+      (scala.override { jre = graalvm11-ce; })
+      scala-cli
+      bazel_5
+      # bazel-buildtools
+      # cargo
+      curl
+      delta
+      dhall
+      dhall-json
+      dhall-lsp-server
+      duf
+      fzf
+      gdb
+      gettext
+      gh
+      gitAndTools.hub
+      gnupg
+      go_1_18
+      gopls
+      # golangci-lint
+      google-cloud-sdk
+      gradle
+      graphviz-nox
+      graalvm11-ce
+      jq
+      kind
+      kustomize
+      kubebuilder
+      kubectx
+      kubernetes
+      kubernetes-helm
+      maven
+      minikube
+      mosh
+      nixfmt
+      # podman
+      protobuf
+      (python3.withPackages
+        (ps: with ps; with python3Packages; [ pip ]))
+      ripgrep
+      rust-analyzer
+      rustup
+      (sbt.override { jre = graalvm11-ce; })
+      scalafmt
+      shellcheck
+      silver-searcher
+      tldr
+      nodejs-16_x
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+      nodePackages.yarn
+      nodePackages.mermaid-cli
+      nodePackages.sql-formatter
+      nodePackages.prettier
+      nodePackages.yo
+      nodePackages.generator-code
+      wget
+      yq-go
+      # editorconfig-checker
+      pandoc
+      nixpkgs-fmt
+      metals
+      # llvm
+    ] ++ lib.optionals stdenv.isDarwin [
+      cocoapods
+      m-cli # useful macOS CLI commands
+    ];
 
-  home.packages = with pkgs; [
-    (scala.override { jre = jdk; })
-    scala-cli
-    bazel
-    bazel-buildtools
-    # cargo
-    curl
-    delta
-    duf
-    fzf
-    gdb
-    gettext
-    gh
-    gitAndTools.hub
-    gnupg
-    go_1_17
-    gopls
-    golangci-lint
-    google-cloud-sdk
-    gradle
-    graphviz-nox
-    htop
-    jdk
-    jq
-    kind
-    kustomize
-    kubebuilder
-    kubectx
-    kubernetes
-    maven
-    minikube
-    mosh
-    nixfmt
-    podman
-    protobuf
-    (python38.withPackages
-      (ps: with ps; with python38Packages; [ pip ipykernel ipython ]))
-    ripgrep
-    rust-analyzer
-    rustup
-    sbt
-    scalafmt
-    shellcheck
-    silver-searcher
-    tldr
-    nodejs-16_x
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.yarn
-    nodePackages.mermaid-cli
-    nodePackages.sql-formatter
-    nodePackages.prettier
-    wget
-    yq-go
-    # editorconfig-checker
-    pandoc
-    nixpkgs-fmt
-    # metals
-    llvm
-  ];
-
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "regadas";
-  home.homeDirectory = "/Users/regadas";
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "21.11";
 }
+
