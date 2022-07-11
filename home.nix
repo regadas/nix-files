@@ -217,7 +217,7 @@
       # podman
       protobuf
       (python3.withPackages
-        (ps: with ps; with python3Packages; [ pip ]))
+        (ps: with ps; with python3Packages; [ pip readline ]))
       ripgrep
       rust-analyzer
       rustup
