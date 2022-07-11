@@ -183,7 +183,6 @@
       scala-cli
       bazel_5
       # bazel-buildtools
-      # cargo
       curl
       delta
       dhall
