@@ -166,6 +166,7 @@
   home.packages = with pkgs;
     [
       trino-cli
+      operator-sdk
       deno
       yarn2nix
       ditaa
