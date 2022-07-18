@@ -165,6 +165,7 @@
 
   home.packages = with pkgs;
     [
+      trino-cli
       deno
       yarn2nix
       ditaa
