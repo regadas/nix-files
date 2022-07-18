@@ -165,32 +165,25 @@
 
   home.packages = with pkgs;
     [
-      trino-cli
-      operator-sdk
-      deno
-      yarn2nix
-      ditaa
-      # hugo
-      imagemagick
-      leiningen
-      parallel
-      avro-tools
-      ripgrep
-      coreutils
-      gnused
-      emacsUnstable
-      cmake
-      #libtool
-      watch
-      (scala.override { jre = graalvm11-ce; })
-      scala-cli
-      bazel_5
       # bazel-buildtools
+      # editorconfig-checker
+      # golangci-lint
+      # hugo
+      # podman
+      # emacsUnstable
+      # libtool
+      # llvm
+      avro-tools
+      bazel_5
+      cmake
+      coreutils
       curl
       delta
+      deno
       dhall
       dhall-json
       dhall-lsp-server
+      ditaa
       duf
       fzf
       gdb
@@ -198,52 +191,59 @@
       gh
       gitAndTools.hub
       gnupg
+      gnused
       go_1_18
-      gopls
-      # golangci-lint
       google-cloud-sdk
+      gopls
+      graalvm11-ce
       gradle
       graphviz-nox
-      graalvm11-ce
+      imagemagick
       jq
       kind
-      kustomize
       kubebuilder
       kubectx
       kubernetes
       kubernetes-helm
+      kustomize
+      leiningen
       maven
+      metals
       minikube
       mosh
       nixfmt
-      # podman
+      nixpkgs-fmt
+      nodePackages.generator-code
+      nodePackages.mermaid-cli
+      nodePackages.prettier
+      nodePackages.sql-formatter
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+      nodePackages.yarn
+      nodePackages.yo
+      nodejs-16_x
+      operator-sdk
+      pandoc
+      parallel
       protobuf
       (python3.withPackages
         (ps: with ps; with python3Packages; [ pip readline ]))
       ripgrep
+      ripgrep
       rust-analyzer
       rustup
       (sbt.override { jre = graalvm11-ce; })
+      (scala.override { jre = graalvm11-ce; })
+      scala-cli
       scalafmt
       shellcheck
       silver-searcher
       tldr
-      nodejs-16_x
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      nodePackages.yarn
-      nodePackages.mermaid-cli
-      nodePackages.sql-formatter
-      nodePackages.prettier
-      nodePackages.yo
-      nodePackages.generator-code
+      trino-cli
+      watch
       wget
+      yarn2nix
       yq-go
-      # editorconfig-checker
-      pandoc
-      nixpkgs-fmt
-      metals
-      # llvm
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
