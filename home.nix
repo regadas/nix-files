@@ -230,7 +230,6 @@
         (ps: with ps; with python3Packages; [ pip readline ]))
       ripgrep
       ripgrep
-      rust-analyzer
       rustup
       (sbt.override { jre = graalvm11-ce; })
       (scala.override { jre = graalvm11-ce; })
