@@ -58,6 +58,7 @@
     recursive
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     iosevka
+    font-awesome
   ];
 
   # Keyboard
