@@ -173,6 +173,7 @@
       # emacsUnstable
       # libtool
       # llvm
+      act
       avro-tools
       bazel_5
       cmake
