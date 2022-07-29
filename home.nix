@@ -187,6 +187,7 @@
       ditaa
       duf
       fzf
+      html-tidy
       gdb
       gettext
       gh
