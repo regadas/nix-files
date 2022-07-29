@@ -170,7 +170,7 @@
       # golangci-lint
       # hugo
       # podman
-      # emacsUnstable
+      emacsUnstable
       # libtool
       # llvm
       act
