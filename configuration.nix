@@ -57,7 +57,7 @@
   fonts.fonts = with pkgs; [
     recursive
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    iosevka
+    iosevka-bin
     font-awesome
   ];
 
