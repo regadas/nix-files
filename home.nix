@@ -169,7 +169,7 @@
       # bazel-buildtools
       # editorconfig-checker
       # golangci-lint
-      # hugo
+      hugo
       # podman
       emacsUnstable
       # libtool
