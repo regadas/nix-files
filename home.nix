@@ -170,7 +170,7 @@
       # editorconfig-checker
       # golangci-lint
       hugo
-      # podman
+      podman
       emacsUnstable
       # libtool
       # llvm
