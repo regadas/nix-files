@@ -3,16 +3,6 @@
 {
   home.stateVersion = "22.05";
 
-  nixpkgs.overlays = [
-    #(self: super: { vscode = pkgsUnstable.vscode; })
-    # (self: super: {
-    #   jre = pkgs.graalvm11-ce;
-    #   jdk = pkgs.graalvm11-ce;
-    # })
-  ];
-
-  # https://github.com/malob/nixpkgs/blob/master/home/default.nix
-
   programs = {
     htop.enable = true;
 
