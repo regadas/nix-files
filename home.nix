@@ -139,7 +139,7 @@
     #vscode.enable = true;
     java = {
       enable = true;
-      package = pkgs.graalvm11-ce;
+      package = pkgs.jdk;
     };
 
     direnv.enable = true;
@@ -190,7 +190,7 @@
       go_1_18
       google-cloud-sdk
       gopls
-      graalvm11-ce
+      jdk
       gradle
       graphviz-nox
       imagemagick
@@ -226,8 +226,8 @@
       ripgrep
       ripgrep
       rustup
-      (sbt.override { jre = graalvm11-ce; })
-      (scala.override { jre = graalvm11-ce; })
+      sbt
+      scala
       scala-cli
       scalafmt
       shellcheck
