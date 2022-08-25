@@ -156,6 +156,7 @@
 
   home.packages = with pkgs;
     [
+      texlab
       # bazel-buildtools
       # editorconfig-checker
       # golangci-lint
