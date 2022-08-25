@@ -156,6 +156,7 @@
 
   home.packages = with pkgs;
     [
+      helix
       texlab
       # bazel-buildtools
       # editorconfig-checker
