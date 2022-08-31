@@ -4,24 +4,47 @@
   home.stateVersion = "22.05";
 
   programs = {
-    htop.enable = true;
-
-    neovim = {
+    helix = {
       enable = true;
-      viAlias = true;
-      vimAlias = true;
-      plugins = with pkgs; [
-        vimPlugins.ctrlp
-        vimPlugins.vim-airline
-        vimPlugins.vim-airline-themes
-        vimPlugins.vim-eunuch
-        vimPlugins.vim-gitgutter
-        vimPlugins.vim-markdown
-        vimPlugins.vim-nix
-        vimPlugins.nvim-lspconfig
-        vimPlugins.telescope-nvim
+      settings = {
+        theme = "base16";
+        # lsp.display-messages = true;
+        editor = {
+          line-number = "relative";
+          mouse = true;
+        };
+        keys.normal = {
+          space.space = "file_picker";
+        };
+        editor.cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+        editor.file-picker = {
+          hidden = false;
+        };
+      };
+      languages = [
+        { name = "latex"; }
+        { name = "html"; }
+        { name = "bash"; }
+        { name = "toml"; }
+        { name = "nix"; }
+        { name = "markdown"; }
+        { name = "yaml"; }
+        { name = "json"; }
+        { name = "go"; }
+        { name = "java"; }
+        { name = "scala"; }
+        { name = "rust"; }
+        { name = "python"; }
+        { name = "javascript"; }
+        { name = "typescript"; }
       ];
     };
+
+    htop.enable = true;
 
     git = {
       enable = true;
@@ -156,7 +179,7 @@
 
   home.packages = with pkgs;
     [
-      helix
+      jdt-language-server
       texlab
       # bazel-buildtools
       # editorconfig-checker
