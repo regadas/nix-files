@@ -73,6 +73,8 @@
       };
 
       ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ];
+
+      delta.enable = true;
     };
 
     tmux = {
