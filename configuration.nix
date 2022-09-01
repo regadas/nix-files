@@ -55,6 +55,7 @@
     recursive
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     iosevka-bin
+    (iosevka-bin.override { variant = "ss09"; })
     font-awesome
   ];
 
