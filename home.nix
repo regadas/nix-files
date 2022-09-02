@@ -89,9 +89,9 @@
         {
           plugin = dracula;
           extraConfig = ''
-            set -g @dracula-plugins "cpu-usage gpu-usage ram-usage"
+            set -g @dracula-plugins "cpu-usage ram-usage"
             set -g @dracula-show-battery false
-            set -g @dracula-show-powerline false
+            set -g @dracula-show-powerline true
             set -g @dracula-refresh-rate 10
             # set -g @dracula-show-left-icon window
           '';
