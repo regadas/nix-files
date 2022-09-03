@@ -182,6 +182,8 @@
 
   home.packages = with pkgs;
     [
+      clang
+      rnix-lsp
       jdt-language-server
       texlab
       # bazel-buildtools
