@@ -79,7 +79,7 @@
 
     tmux = {
       enable = true;
-      terminal = "screen-256color";
+      terminal = "xterm-256color";
       baseIndex = 1;
       keyMode = "vi";
       shortcut = "s";
@@ -99,6 +99,7 @@
       ];
 
       extraConfig = ''
+        set -ga terminal-overrides ",xterm-256color*:Tc"
         set -g mouse on
 
         # act like vim
