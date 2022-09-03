@@ -38,7 +38,7 @@
             url = "https://github.com/nix-community/emacs-overlay.git";
             ref = "master";
             rev =
-              "e007354fcc0f492878d85b85334ab3baa08a273b"; # change the revision
+              "68fbdf4f08f19f95b1c64b21c4db16403b5498e3"; # change the revision
           }))
         ] ++ singleton (
           # Sub in x86 version of packages that don't build on Apple Silicon yet
