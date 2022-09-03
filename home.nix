@@ -7,25 +7,25 @@
     helix = {
       enable = true;
       settings = {
-        theme = "base16";
-        # lsp.display-messages = true;
+        theme = "catppuccin_mocha";
         editor = {
           line-number = "relative";
           mouse = true;
+          lsp.display-messages = true;
+          cursorline = true;
+          indent-guides.render = true;
+          color-modes = true;
         };
-        keys.normal = {
-          space.space = "file_picker";
-        };
+        keys.normal = { space.space = "file_picker"; };
         editor.cursor-shape = {
           insert = "bar";
           normal = "block";
           select = "underline";
         };
-        editor.file-picker = {
-          hidden = false;
-        };
+        editor.file-picker = { hidden = false; };
       };
       languages = [
+        { name = "sql"; }
         { name = "latex"; }
         { name = "html"; }
         { name = "bash"; }
