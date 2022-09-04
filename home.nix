@@ -185,6 +185,8 @@
 
   home.packages = with pkgs;
     [
+      ltex-ls
+      languagetool
       clang
       rnix-lsp
       jdt-language-server
