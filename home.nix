@@ -33,7 +33,10 @@
         { name = "nix"; }
         { name = "markdown"; }
         { name = "yaml"; }
-        { name = "json"; }
+        {
+          name = "json";
+          formatter = { command = "prettier"; args = [ "--parser" "json" ]; };
+        }
         { name = "go"; }
         { name = "java"; }
         { name = "scala"; }
