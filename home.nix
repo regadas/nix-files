@@ -196,7 +196,6 @@
       # golangci-lint
       hugo
       podman
-      emacsUnstable
       # libtool
       # llvm
       act
@@ -277,4 +276,3 @@
     ];
 
 }
-
