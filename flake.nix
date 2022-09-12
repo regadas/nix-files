@@ -45,7 +45,7 @@
           final: prev:
             (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
               inherit (final.pkgs-x86)
-                emacsMacport nix-index niv purescript bazel;
+                emacsMacport nix-index niv purescript bazel scala-cli;
             })
         );
       };
