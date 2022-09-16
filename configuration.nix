@@ -45,8 +45,7 @@
     vscode
     alacritty
     terminal-notifier
-  ] ++ lib.optionals stdenv.isDarwin [
-    emacsMacport
+    emacsUnstable
   ];
 
   programs.nix-index.enable = true;
