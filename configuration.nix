@@ -45,7 +45,7 @@
     vscode
     alacritty
     terminal-notifier
-    emacsUnstable
+    emacs
   ];
 
   programs.nix-index.enable = true;
