@@ -45,7 +45,10 @@
     vscode
     alacritty
     terminal-notifier
-    emacs
+    # emacs
+    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
+      epkgs.vterm
+    ]))
   ];
 
   programs.nix-index.enable = true;
@@ -68,4 +71,3 @@
   security.pam.enableSudoTouchIdAuth = true;
 
 }
-
