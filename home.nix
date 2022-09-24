@@ -219,7 +219,7 @@
       gitAndTools.hub
       gnupg
       gnused
-      go_1_18
+      go_1_19
       google-cloud-sdk
       gopls
       jdk
