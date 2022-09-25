@@ -39,7 +39,16 @@
         }
         { name = "go"; }
         { name = "java"; }
-        { name = "scala"; }
+        {
+          name = "scala";
+          scope = "source.scala";
+          roots = [ "build.sbt" "pom.xml" ];
+          file-types = [ "scala" "sbt" ];
+          comment-token = "//";
+          indent = { tab-width = 2; unit = "  "; };
+          language-server = { command = "metals"; };
+          config = { metals.ammoniteJvmProperties = [ "-Xmx1G" ]; };
+        }
         { name = "rust"; }
         { name = "python"; }
         { name = "javascript"; }
