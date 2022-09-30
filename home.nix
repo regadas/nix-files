@@ -201,7 +201,7 @@
       jdt-language-server
       texlab
       # bazel-buildtools
-      # editorconfig-checker
+      editorconfig-checker
       # golangci-lint
       hugo
       podman
