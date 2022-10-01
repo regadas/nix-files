@@ -229,7 +229,7 @@
       gnupg
       gnused
       go_1_19
-      google-cloud-sdk
+      (google-cloud-sdk.withExtraComponents ([ google-cloud-sdk.components.gke-gcloud-auth-plugin ]))
       gopls
       jdk
       gradle
