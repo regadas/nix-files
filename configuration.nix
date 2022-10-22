@@ -45,10 +45,6 @@
     vscode
     alacritty
     terminal-notifier
-    # emacs
-    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
-      epkgs.vterm
-    ]))
   ];
 
   programs.nix-index.enable = true;
