@@ -255,6 +255,8 @@
       nodePackages.sql-formatter
       nodePackages.typescript
       nodePackages.typescript-language-server
+      nodePackages.yaml-language-server
+      nodePackages.vscode-json-languageserver
       nodePackages.yarn
       nodePackages.yo
       nodejs-16_x
