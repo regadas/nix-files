@@ -158,6 +158,7 @@
         }
       ];
       initExtra = ''
+        export USE_GKE_GCLOUD_AUTH_PLUGIN=True
         export LSP_USE_PLISTS=true
         export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=bold,underline"
         export PATH=$PATH:/opt/homebrew/bin:$HOME/go/bin
