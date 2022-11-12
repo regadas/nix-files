@@ -74,7 +74,7 @@
       userEmail = "oss@regadas.email";
 
       signing = {
-        key = "2572CF0C";
+        key = "55A043A0";
         signByDefault = true;
       };
 
