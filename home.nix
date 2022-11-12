@@ -49,6 +49,15 @@
           language-server = { command = "metals"; };
           config = { metals.ammoniteJvmProperties = [ "-Xmx1G" ]; };
         }
+        {
+          name = "dhall";
+          scope = "source.dhall";
+          roots = [ ];
+          file-types = [ "dhall" ];
+          comment-token = "#";
+          indent = { tab-width = 2; unit = "  "; };
+          language-server = { command = "dhall-lsp-server"; };
+        }
         { name = "rust"; }
         { name = "python"; }
         { name = "javascript"; }
