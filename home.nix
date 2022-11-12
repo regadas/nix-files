@@ -216,6 +216,7 @@
       # golangci-lint
       hugo
       podman
+      qemu
       # libtool
       # llvm
       act
