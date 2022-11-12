@@ -205,6 +205,7 @@
 
   home.packages = with pkgs;
     [
+      nodePackages.dockerfile-language-server-nodejs
       ltex-ls
       languagetool
       clang
