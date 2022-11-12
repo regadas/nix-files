@@ -33,6 +33,7 @@
         { name = "nix"; }
         { name = "markdown"; }
         { name = "yaml"; }
+        { name = "dockerfile"; }
         {
           name = "json";
           formatter = { command = "prettier"; args = [ "--parser" "json" ]; };
