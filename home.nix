@@ -216,8 +216,7 @@
       editorconfig-checker
       # golangci-lint
       hugo
-      podman
-      qemu
+      colima
       # libtool
       # llvm
       act
