@@ -277,7 +277,7 @@
       parallel
       protobuf
       (python3.withPackages
-        (ps: with ps; with python3Packages; [ pip readline ]))
+        (ps: with ps; with python3Packages; [ pip readline sqlparse ]))
       ripgrep
       ripgrep
       rustup
