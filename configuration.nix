@@ -53,7 +53,7 @@
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
     recursive
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerdfonts
     iosevka-bin
     (iosevka-bin.override { variant = "ss09"; })
     font-awesome
