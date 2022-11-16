@@ -4,6 +4,10 @@
   home.stateVersion = "22.05";
 
   programs = {
+    neovim = {
+      enable = true;
+    };
+
     helix = {
       enable = true;
       settings = {
