@@ -188,8 +188,10 @@
 
     fzf.enable = true;
 
-    #alacritty.enable = true;
-    #vscode.enable = true;
+    alacritty.enable = true;
+    
+    vscode.enable = true;
+    
     java = {
       enable = true;
       package = pkgs.jdk;
