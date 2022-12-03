@@ -179,7 +179,7 @@
       '';
     };
 
-    # broot.enable = true;
+    broot.enable = true;
 
     bat = {
       enable = true;
@@ -199,10 +199,12 @@
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
+
     texlive = {
       enable = true;
       extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
     };
+
     exa = {
       enable = true;
       enableAliases = true;
