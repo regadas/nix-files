@@ -150,6 +150,38 @@
       '';
     };
 
+    fish = {
+      enable = true;
+      plugins = [
+        {
+          name = "hydro";
+          src = pkgs.fetchFromGitHub {
+            owner = "jorgebucaran";
+            repo = "hydro";
+            rev = "a5877e9ef76b3e915c06143630bffc5ddeaba2a1";
+            sha256 = "nJ8nQqaTWlISWXx5a0WeUA4+GL7Fe25658UIqKa389E=";
+          };
+        }
+      ];
+      shellInit = ''
+        set -g hydro_symbol_prompt "λ"
+
+        # set -ga PATH ${config.xdg.configHome}/bin
+        # set -ga PATH $HOME/.local/bin
+        # set -ga PATH /run/wrappers/bin
+        # set -ga PATH $HOME/.nix-profile/bin
+        # if test $KERNEL_NAME darwin
+        #   set -ga PATH /opt/homebrew/opt/llvm/bin
+        #   set -ga PATH /opt/homebrew/bin
+        #   set -ga PATH /opt/homebrew/sbin
+        # end
+        # set -ga PATH /run/current-system/sw/bin
+        # set -ga PATH /nix/var/nix/profiles/default/bin
+
+        set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True 
+      '';
+    };
+
     zsh = {
       enable = true;
       autocd = true;
