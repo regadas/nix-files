@@ -3,7 +3,7 @@
 
   inputs = {
     # Package sets
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.05-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     # Environment/system management
@@ -38,7 +38,7 @@
             url = "https://github.com/nix-community/emacs-overlay.git";
             ref = "master";
             rev =
-              "382683139e3eb1ffb155e34e0e987e77db94aa9c"; # change the revision
+              "612fc9ab31d2cdfe6ca99d606c49072d90c4e42b"; # change the revision
           }))
         ] ++ singleton (
           # Sub in x86 version of packages that don't build on Apple Silicon yet
