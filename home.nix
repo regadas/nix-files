@@ -218,7 +218,7 @@
       config.theme = "ansi";
     };
 
-    fzf.enable = true;
+    skim.enable = true;
 
     alacritty.enable = true;
 
