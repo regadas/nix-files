@@ -245,6 +245,7 @@
 
   home.packages = with pkgs;
     [
+      pluto
       nodePackages.dockerfile-language-server-nodejs
       ltex-ls
       languagetool
