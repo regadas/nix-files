@@ -241,6 +241,8 @@
       enable = true;
       enableAliases = true;
     };
+
+    zoxide.enable = true;
   };
 
   home.packages = with pkgs;
