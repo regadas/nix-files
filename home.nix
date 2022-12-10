@@ -284,7 +284,7 @@
       gitAndTools.hub
       gnupg
       gnused
-      go_1_19
+      go
       (google-cloud-sdk.withExtraComponents ([ google-cloud-sdk.components.gke-gcloud-auth-plugin ]))
       gopls
       jdk
