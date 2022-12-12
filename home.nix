@@ -190,7 +190,7 @@
       shellAliases = {
         cat = "bat";
         git = "hub";
-        kubectl = "k";
+        k = "kubectl";
       };
       plugins = [
         {
