@@ -219,7 +219,7 @@
       config.theme = "ansi";
     };
 
-    skim.enable = true;
+    fzf.enable = true;
 
     alacritty.enable = true;
 
@@ -277,7 +277,6 @@
       dhall-lsp-server
       ditaa
       duf
-      fzf
       html-tidy
       gdb
       gettext
