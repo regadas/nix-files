@@ -179,7 +179,7 @@
         # set -ga PATH /run/current-system/sw/bin
         # set -ga PATH /nix/var/nix/profiles/default/bin
 
-        set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True 
+        set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
       '';
 
       shellAliases = {
