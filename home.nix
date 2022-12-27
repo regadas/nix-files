@@ -168,14 +168,14 @@
         set -g hydro_symbol_prompt "λ"
 
         # set -ga PATH ${config.xdg.configHome}/bin
-        # set -ga PATH $HOME/.local/bin
+        set -ga PATH $HOME/.local/bin
         # set -ga PATH /run/wrappers/bin
         # set -ga PATH $HOME/.nix-profile/bin
-        # if test $KERNEL_NAME darwin
-        #   set -ga PATH /opt/homebrew/opt/llvm/bin
-        #   set -ga PATH /opt/homebrew/bin
-        #   set -ga PATH /opt/homebrew/sbin
-        # end
+        if test $KERNEL_NAME darwin
+          set -ga PATH /opt/homebrew/opt/llvm/bin
+          set -ga PATH /opt/homebrew/bin
+          set -ga PATH /opt/homebrew/sbin
+        end
         # set -ga PATH /run/current-system/sw/bin
         # set -ga PATH /nix/var/nix/profiles/default/bin
 
