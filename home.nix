@@ -181,6 +181,12 @@
 
         set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True 
       '';
+
+      shellAliases = {
+        cat = "bat";
+        git = "hub";
+        k = "kubectl";
+      };
     };
 
     zsh = {
