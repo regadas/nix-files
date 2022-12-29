@@ -168,16 +168,14 @@
         set -g hydro_symbol_prompt "λ"
 
         # set -ga PATH ${config.xdg.configHome}/bin
-        set -ga PATH $HOME/.local/bin
-        # set -ga PATH /run/wrappers/bin
-        # set -ga PATH $HOME/.nix-profile/bin
+        fish_add_path -gm $HOME/.local/bin
         if test $KERNEL_NAME darwin
-          set -ga PATH /opt/homebrew/opt/llvm/bin
-          set -ga PATH /opt/homebrew/bin
-          set -ga PATH /opt/homebrew/sbin
+          fish_add_path -gm /opt/homebrew/opt/llvm/bin
+          fish_add_path -gm /opt/homebrew/bin
+          fish_add_path -gm /opt/homebrew/sbin
         end
-        # set -ga PATH /run/current-system/sw/bin
-        # set -ga PATH /nix/var/nix/profiles/default/bin
+
+        fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
 
         set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
       '';
