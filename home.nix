@@ -174,6 +174,8 @@
 
         # set -ga PATH ${config.xdg.configHome}/bin
         fish_add_path -gm $HOME/.local/bin
+        fish_add_path -gm $HOME/go/bin
+
         if test $KERNEL_NAME darwin
           fish_add_path -gm /opt/homebrew/opt/llvm/bin
           fish_add_path -gm /opt/homebrew/bin
@@ -183,6 +185,7 @@
         fish_add_path --move --prepend --path $HOME/.nix-profile/bin /run/wrappers/bin /etc/profiles/per-user/$USER/bin /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
 
         set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
+        set -gx LSP_USE_PLISTS True
       '';
 
       shellAliases = {
