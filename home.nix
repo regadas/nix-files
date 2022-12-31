@@ -4,9 +4,7 @@
   home.stateVersion = "22.11";
 
   programs = {
-    neovim = {
-      enable = true;
-    };
+    neovim = { enable = true; };
 
     helix = {
       enable = true;
@@ -40,7 +38,10 @@
         { name = "dockerfile"; }
         {
           name = "json";
-          formatter = { command = "prettier"; args = [ "--parser" "json" ]; };
+          formatter = {
+            command = "prettier";
+            args = [ "--parser" "json" ];
+          };
         }
         { name = "go"; }
         { name = "java"; }
@@ -50,7 +51,10 @@
           roots = [ "build.sbt" "pom.xml" ];
           file-types = [ "scala" "sbt" ];
           comment-token = "//";
-          indent = { tab-width = 2; unit = "  "; };
+          indent = {
+            tab-width = 2;
+            unit = "  ";
+          };
           language-server = { command = "metals"; };
           config = { metals.ammoniteJvmProperties = [ "-Xmx1G" ]; };
         }
@@ -60,7 +64,10 @@
           roots = [ ];
           file-types = [ "dhall" ];
           comment-token = "#";
-          indent = { tab-width = 2; unit = "  "; };
+          indent = {
+            tab-width = 2;
+            unit = "  ";
+          };
           language-server = { command = "dhall-lsp-server"; };
         }
         { name = "rust"; }
@@ -152,17 +159,15 @@
 
     fish = {
       enable = true;
-      plugins = [
-        {
-          name = "hydro";
-          src = pkgs.fetchFromGitHub {
-            owner = "jorgebucaran";
-            repo = "hydro";
-            rev = "a5877e9ef76b3e915c06143630bffc5ddeaba2a1";
-            sha256 = "nJ8nQqaTWlISWXx5a0WeUA4+GL7Fe25658UIqKa389E=";
-          };
-        }
-      ];
+      plugins = [{
+        name = "hydro";
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "hydro";
+          rev = "a5877e9ef76b3e915c06143630bffc5ddeaba2a1";
+          sha256 = "nJ8nQqaTWlISWXx5a0WeUA4+GL7Fe25658UIqKa389E=";
+        };
+      }];
       shellInit = ''
         set -U fish_greeting "🐟"
         set -g hydro_symbol_prompt "λ"
