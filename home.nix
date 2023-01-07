@@ -169,7 +169,7 @@
         };
       }];
       shellInit = ''
-        set -U fish_greeting 
+        set -U fish_greeting
         set -g hydro_symbol_prompt "λ"
 
         # set -ga PATH ${config.xdg.configHome}/bin
