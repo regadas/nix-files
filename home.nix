@@ -198,6 +198,8 @@
     zsh = {
       enable = true;
       autocd = true;
+      enableCompletion = true;
+      enableSyntaxHighlighting = true;
       enableAutosuggestions = true;
       history.extended = true;
       shellAliases = {
