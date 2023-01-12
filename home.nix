@@ -263,6 +263,7 @@
 
   home.packages = with pkgs;
     [
+      rustpython
       k9s
       pluto
       nodePackages.dockerfile-language-server-nodejs
