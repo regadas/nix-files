@@ -263,6 +263,7 @@
 
   home.packages = with pkgs;
     [
+      cloud-sql-proxy
       rustpython
       k9s
       pluto
