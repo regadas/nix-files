@@ -9,7 +9,7 @@
     helix = {
       enable = true;
       settings = {
-        theme = "catppuccin_mocha";
+        theme = "rose_pine";
         editor = {
           line-number = "relative";
           mouse = true;
