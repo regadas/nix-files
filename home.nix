@@ -4,7 +4,11 @@
   home.stateVersion = "22.11";
 
   programs = {
-    neovim = { enable = true; };
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+    };
 
     helix = {
       enable = true;
