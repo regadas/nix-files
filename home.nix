@@ -8,6 +8,8 @@
       enable = true;
       viAlias = true;
       vimAlias = true;
+
+      withNodeJs = true;
     };
 
     helix = {
