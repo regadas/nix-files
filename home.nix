@@ -269,6 +269,7 @@
 
   home.packages = with pkgs;
     [
+      obsidian
       d2
       cloud-sql-proxy
       rustpython
