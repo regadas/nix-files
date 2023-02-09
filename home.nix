@@ -278,21 +278,15 @@
       nodePackages.dockerfile-language-server-nodejs
       ltex-ls
       languagetool
-      clang
       rnix-lsp
       jdt-language-server
       texlab
-      # bazel-buildtools
       editorconfig-checker
-      # golangci-lint
       hugo
       colima
-      # libtool
-      # llvm
       act
       avro-tools
       bazel_5
-      cmake
       coreutils
       curl
       delta
