@@ -287,6 +287,7 @@
       act
       avro-tools
       bazel_5
+      bazel-buildtools
       coreutils
       curl
       delta
