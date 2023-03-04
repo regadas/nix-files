@@ -246,7 +246,6 @@
 
     vscode = {
       enable = true;
-      enableUpdateCheck = false;
     };
 
     java = {
