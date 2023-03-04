@@ -244,7 +244,10 @@
 
     alacritty.enable = true;
 
-    vscode.enable = true;
+    vscode = {
+      enable = true;
+      enableUpdateCheck = false;
+    };
 
     java = {
       enable = true;
