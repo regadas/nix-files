@@ -17,10 +17,11 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-darwin.url = "github:cmacrae/emacs";
 
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, emacs-overlay, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, emacs-overlay, emacs-darwin, ... }@inputs:
     let
 
       inherit (darwin.lib) darwinSystem;
@@ -43,6 +44,7 @@
             rev =
               "612fc9ab31d2cdfe6ca99d606c49072d90c4e42b"; # change the revision
           }))
+          emacs-darwin.overlay
         ] ++ singleton (
           # Sub in x86 version of packages that don't build on Apple Silicon yet
           final: prev:

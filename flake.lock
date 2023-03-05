@@ -21,6 +21,26 @@
         "type": "github"
       }
     },
+    "emacs-darwin": {
+      "inputs": {
+        "emacs-src": "emacs-src",
+        "emacs-vterm-src": "emacs-vterm-src",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1677548181,
+        "narHash": "sha256-1cZdZAgPM/3lTruuxTSXe2zERq9wrEnJa5IlqaDmHuw=",
+        "owner": "cmacrae",
+        "repo": "emacs",
+        "rev": "3173eb62de673f63e422e59fc2b783bd1e980fb2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cmacrae",
+        "repo": "emacs",
+        "type": "github"
+      }
+    },
     "emacs-overlay": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -39,6 +59,38 @@
       "original": {
         "owner": "nix-community",
         "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
+    "emacs-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1677525287,
+        "narHash": "sha256-iz3XkXGPAeNItYQr+N2BLQIzAhL6dM/cY9aNE3F0+9s=",
+        "owner": "emacs-mirror",
+        "repo": "emacs",
+        "rev": "93f557af0ef85ce301bb0780e26351eb8809e91c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emacs-mirror",
+        "repo": "emacs",
+        "type": "github"
+      }
+    },
+    "emacs-vterm-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1676600925,
+        "narHash": "sha256-c3puNJ0YATQkT3tjQ22PPmMonNzTp6SPzzheS7m1pd8=",
+        "owner": "akermu",
+        "repo": "emacs-libvterm",
+        "rev": "3e5a9b754b8e61850bb7d1b63b090b9fbf6687f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "akermu",
+        "repo": "emacs-libvterm",
         "type": "github"
       }
     },
@@ -80,16 +132,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1677879050,
-        "narHash": "sha256-uUjjgwyQESvaystJqfkPHl+EjJ6SFaXB4a2ZCziHtX0=",
+        "lastModified": 1677413016,
+        "narHash": "sha256-dwvL0VK5iyxXPQzJOPzYmuVinh/R9hwRu7eYq6Bf6ag=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9c951e688231c47a51034e2aa66c1951f9bb80d0",
+        "rev": "84e33aea0f7a8375c92458c5b6cad75fa1dd561b",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixpkgs-22.11-darwin",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -110,12 +162,29 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1677879050,
+        "narHash": "sha256-uUjjgwyQESvaystJqfkPHl+EjJ6SFaXB4a2ZCziHtX0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9c951e688231c47a51034e2aa66c1951f9bb80d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-22.11-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
+        "emacs-darwin": "emacs-darwin",
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },

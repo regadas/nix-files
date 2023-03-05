@@ -271,6 +271,7 @@
 
   home.packages = with pkgs;
     [
+      emacs
       httpie
       obsidian
       d2
