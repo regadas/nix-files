@@ -271,6 +271,7 @@
 
   home.packages = with pkgs;
     [
+      httpie
       obsidian
       d2
       cloud-sql-proxy
