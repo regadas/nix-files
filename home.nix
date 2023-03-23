@@ -271,6 +271,7 @@
 
   home.packages = with pkgs;
     [
+      marksman
       emacs
       httpie
       obsidian
