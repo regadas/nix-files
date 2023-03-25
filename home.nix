@@ -341,13 +341,19 @@
       nodePackages.vscode-json-languageserver
       nodePackages.yarn
       nodePackages.yo
+      nodePackages.pyright
       nodejs-16_x
       operator-sdk
       pandoc
       parallel
       protobuf
       (python3.withPackages
-        (ps: with ps; with python3Packages; [ pip readline sqlparse ]))
+        (ps: with ps; with python3Packages; [
+          pip
+          readline
+          sqlparse
+          python-lsp-server
+        ]))
       ripgrep
       ripgrep
       rustup
