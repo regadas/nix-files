@@ -277,7 +277,6 @@
       obsidian
       d2
       cloud-sql-proxy
-      rustpython
       k9s
       pluto
       nodePackages.dockerfile-language-server-nodejs
