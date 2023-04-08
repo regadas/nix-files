@@ -356,7 +356,6 @@
           python-lsp-server
         ]))
       ripgrep
-      ripgrep
       rustup
       sbt
       scala
