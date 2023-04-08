@@ -272,6 +272,7 @@
 
   home.packages = with pkgs;
     [
+      fx
       krew
       marksman
       emacs
