@@ -344,6 +344,7 @@
       nodePackages.yarn
       nodePackages.yo
       nodePackages.pyright
+      nodePackages_latest.bash-language-server
       nodejs-16_x
       operator-sdk
       pandoc
