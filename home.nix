@@ -345,6 +345,7 @@
       nodePackages.yo
       nodePackages.pyright
       nodePackages_latest.bash-language-server
+      nodePackages_latest.markdownlint-cli
       nodejs-16_x
       operator-sdk
       pandoc
