@@ -58,6 +58,7 @@
     (iosevka-bin.override { variant = "ss09"; })
     font-awesome
     cascadia-code
+    fira-code
   ];
 
   # Keyboard
