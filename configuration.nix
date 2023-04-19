@@ -59,6 +59,7 @@
     font-awesome
     cascadia-code
     fira-code
+    jetbrains-mono
   ];
 
   # Keyboard
