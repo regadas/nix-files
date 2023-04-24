@@ -165,15 +165,17 @@
 
     fish = {
       enable = true;
-      plugins = [{
-        name = "hydro";
-        src = pkgs.fetchFromGitHub {
-          owner = "jorgebucaran";
-          repo = "hydro";
-          rev = "41b46a05c84a15fe391b9d43ecb71c7a243b5703";
-          sha256 = "nJ8nQqaTWlISWXx5a0WeUA4+GL7Fe25658UIqKa389E=";
-        };
-      }];
+      plugins = [
+        {
+          name = "pure";
+          src = pkgs.fetchFromGitHub {
+            owner = "pure-fish";
+            repo = "pure";
+            rev = "1c1f5b4d1d3fa36162186aa0aac295f59efe22bc";
+            sha256 = "sha256-ec1ZAjIGn6xYMh+3kyQP8HYUti8iFXsyzTJ19tU8T84=";
+          };
+        }
+      ];
       shellInit = ''
         set -U fish_greeting
         set -g hydro_symbol_prompt "λ"
