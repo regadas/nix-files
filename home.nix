@@ -167,6 +167,15 @@
       enable = true;
       plugins = [
         {
+          name = "bass";
+          src = pkgs.fetchFromGitHub {
+            owner = "edc";
+            repo = "bass";
+            rev = "f3a547b0239cf8529d35c1922dd242bacf751d3b";
+            sha256 = "sha256-3mFlFiqGfQ+GfNshwKfhQ39AuNMdt8Nv2Vgb7bBV7L4=";
+          };
+        }
+        {
           name = "pure";
           src = pkgs.fetchFromGitHub {
             owner = "pure-fish";
