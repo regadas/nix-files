@@ -60,6 +60,7 @@
     cascadia-code
     fira-code
     jetbrains-mono
+    ibm-plex
   ];
 
   # Keyboard
