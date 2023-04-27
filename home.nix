@@ -283,6 +283,7 @@
 
   home.packages = with pkgs;
     [
+      git-absorb
       fx
       krew
       marksman
