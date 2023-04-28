@@ -283,6 +283,7 @@
 
   home.packages = with pkgs;
     [
+      grpcurl
       git-absorb
       fx
       krew
