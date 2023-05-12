@@ -349,14 +349,14 @@
       nodePackages.generator-code
       nodePackages.mermaid-cli
       nodePackages.prettier
-      nodePackages.sql-formatter
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      nodePackages.yaml-language-server
-      nodePackages.vscode-json-languageserver
+      nodePackages_latest.sql-formatter
+      nodePackages_latest.typescript
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.yaml-language-server
+      nodePackages_latest.vscode-json-languageserver
       nodePackages.yarn
       nodePackages.yo
-      nodePackages.pyright
+      nodePackages_latest.pyright
       nodePackages_latest.bash-language-server
       nodePackages_latest.markdownlint-cli2
       nodejs-16_x
