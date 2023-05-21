@@ -17,7 +17,7 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-darwin.url = "github:cmacrae/emacs";
+    emacs-darwin.url = "github:regadas/emacs";
 
   };
 
