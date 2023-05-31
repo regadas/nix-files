@@ -2,6 +2,7 @@
 
 {
   # Nix configuration ------------------------------------------------------------------------------
+  users.users.regadas.home = "/Users/regadas";
 
   nix.settings = {
     trusted-users = [ "@admin" ];
