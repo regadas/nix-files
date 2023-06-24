@@ -62,6 +62,7 @@
     fira-code
     jetbrains-mono
     ibm-plex
+    intel-one-mono
   ];
 
   # Keyboard
