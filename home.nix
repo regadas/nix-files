@@ -286,6 +286,7 @@
       ocaml
       opam
       ocamlPackages.ocaml-lsp
+      ocamlPackages.utop
       grpcurl
       git-absorb
       fx
