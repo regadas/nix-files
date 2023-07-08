@@ -283,6 +283,7 @@
 
   home.packages = with pkgs;
     [
+      mysql
       ocaml
       opam
       ocamlPackages.ocaml-lsp
