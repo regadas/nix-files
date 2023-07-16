@@ -180,7 +180,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "pure-fish";
             repo = "pure";
-            rev = "1c1f5b4d1d3fa36162186aa0aac295f59efe22bc";
+            rev = "c0b83abec7197a0d06adc9ffe82d21d5a8c5f865";
             sha256 = "sha256-ec1ZAjIGn6xYMh+3kyQP8HYUti8iFXsyzTJ19tU8T84=";
           };
         }
