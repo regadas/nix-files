@@ -75,7 +75,7 @@
             }
           ];
         };
-        PN402PJ2C6 = darwinSystem {
+        mbp16 = darwinSystem {
           system = "aarch64-darwin";
           modules = [
             # Main `nix-darwin` config
