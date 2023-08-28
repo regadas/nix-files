@@ -319,7 +319,7 @@
       deno
       dhall
       dhall-json
-      dhall-lsp-server
+      # dhall-lsp-server
       ditaa
       duf
       html-tidy
