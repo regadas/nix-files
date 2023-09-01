@@ -283,6 +283,7 @@
 
   home.packages = with pkgs;
     [
+      avro-tools
       mysql
       ocaml
       opam
