@@ -294,7 +294,6 @@
       fx
       krew
       marksman
-      emacs
       httpie
       obsidian
       d2
@@ -394,6 +393,7 @@
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
+      emacs-macport
     ];
 
 }
