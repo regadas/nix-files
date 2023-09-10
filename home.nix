@@ -273,7 +273,7 @@
       extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
     };
 
-    exa = {
+    eza = {
       enable = true;
       enableAliases = true;
     };
