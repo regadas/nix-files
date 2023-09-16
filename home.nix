@@ -111,7 +111,7 @@
         hub.host = "ghe.spotify.net";
       };
 
-      ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ".DS_Store" ];
+      ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ".DS_Store" ".projectile" ];
 
       delta.enable = true;
     };
