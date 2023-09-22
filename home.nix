@@ -283,6 +283,7 @@
 
   home.packages = with pkgs;
     [
+      hadolint
       avro-tools
       mysql
       ocaml
