@@ -11,17 +11,9 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    # Other sources
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    emacs-darwin.url = "github:regadas/emacs";
-
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, emacs-overlay, emacs-darwin, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
     let
 
       inherit (darwin.lib) darwinSystem;
@@ -37,15 +29,7 @@
           allowUnsupportedSystem = true;
         };
 
-        overlays = attrValues self.overlays ++ [
-          (import (builtins.fetchGit {
-            url = "https://github.com/nix-community/emacs-overlay.git";
-            ref = "master";
-            rev =
-              "612fc9ab31d2cdfe6ca99d606c49072d90c4e42b"; # change the revision
-          }))
-          emacs-darwin.overlay
-        ] ++ singleton (
+        overlays = attrValues self.overlays ++ singleton (
           # Sub in x86 version of packages that don't build on Apple Silicon yet
           final: prev:
             (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
@@ -75,7 +59,7 @@
             }
           ];
         };
-        mbp16 = darwinSystem {
+        PN402PJ2C6 = darwinSystem {
           system = "aarch64-darwin";
           modules = [
             # Main `nix-darwin` config
