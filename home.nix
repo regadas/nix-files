@@ -50,7 +50,25 @@
           };
         }
         { name = "go"; }
-        { name = "java"; }
+        {
+          name = "java";
+          language-server = {
+            command = "jdtls";
+            args = [
+              "-Dlog.level=ALL"
+              "-Xmx1G"
+              "--add-modules=ALL-SYSTEM"
+              "--add-opens"
+              "java.base/java.util=ALL-UNNAMED"
+              "--add-opens"
+              "java.base/java.lang=ALL-UNNAMED"
+              "-configuration"
+              "/opt/homebrew/Cellar/jdtls/1.26.0/libexec/config_mac"
+              "-data"
+              "/Users/regadas/.cache/jdtls_data"
+            ];
+          };
+        }
         {
           name = "scala";
           scope = "source.scala";
@@ -111,7 +129,7 @@
         hub.host = "ghe.spotify.net";
       };
 
-      ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ".DS_Store" ".projectile" ];
+      ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ".DS_Store" ".projectile" ".direnv" ];
 
       delta.enable = true;
     };
@@ -386,7 +404,7 @@
       shellcheck
       silver-searcher
       tldr
-      trino-cli
+      # trino-cli
       watch
       wget
       yarn2nix
