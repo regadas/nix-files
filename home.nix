@@ -235,7 +235,7 @@
       enable = true;
       autocd = true;
       enableCompletion = true;
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       enableAutosuggestions = true;
       history.extended = true;
       shellAliases = {
