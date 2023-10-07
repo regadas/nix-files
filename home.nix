@@ -370,7 +370,6 @@
       mosh
       nixfmt
       nixpkgs-fmt
-      nodePackages.generator-code
       nodePackages.mermaid-cli
       nodePackages.prettier
       nodePackages_latest.sql-formatter
