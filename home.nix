@@ -387,6 +387,7 @@
       pandoc
       parallel
       protobuf
+      ruby
       (python3.withPackages
         (ps: with ps; with python3Packages; [
           pip
