@@ -12,95 +12,6 @@
       withNodeJs = true;
     };
 
-    helix = {
-      enable = true;
-      settings = {
-        theme = "rose_pine";
-        editor = {
-          line-number = "relative";
-          mouse = true;
-          lsp.display-messages = true;
-          cursorline = true;
-          indent-guides.render = true;
-          color-modes = true;
-        };
-        keys.normal = { space.space = "file_picker"; };
-        editor.cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
-        editor.file-picker = { hidden = false; };
-      };
-      languages = [
-        { name = "sql"; }
-        { name = "latex"; }
-        { name = "html"; }
-        { name = "bash"; }
-        { name = "toml"; }
-        { name = "nix"; }
-        { name = "markdown"; }
-        { name = "yaml"; }
-        { name = "dockerfile"; }
-        {
-          name = "json";
-          formatter = {
-            command = "prettier";
-            args = [ "--parser" "json" ];
-          };
-        }
-        { name = "go"; }
-        {
-          name = "java";
-          language-server = {
-            command = "jdtls";
-            args = [
-              "-Dlog.level=ALL"
-              "-Xmx1G"
-              "--add-modules=ALL-SYSTEM"
-              "--add-opens"
-              "java.base/java.util=ALL-UNNAMED"
-              "--add-opens"
-              "java.base/java.lang=ALL-UNNAMED"
-              "-configuration"
-              "/opt/homebrew/Cellar/jdtls/1.26.0/libexec/config_mac"
-              "-data"
-              "/Users/regadas/.cache/jdtls_data"
-            ];
-          };
-        }
-        {
-          name = "scala";
-          scope = "source.scala";
-          roots = [ "build.sbt" "pom.xml" ];
-          file-types = [ "scala" "sbt" ];
-          comment-token = "//";
-          indent = {
-            tab-width = 2;
-            unit = "  ";
-          };
-          language-server = { command = "metals"; };
-          config = { metals.ammoniteJvmProperties = [ "-Xmx1G" ]; };
-        }
-        {
-          name = "dhall";
-          scope = "source.dhall";
-          roots = [ ];
-          file-types = [ "dhall" ];
-          comment-token = "#";
-          indent = {
-            tab-width = 2;
-            unit = "  ";
-          };
-          language-server = { command = "dhall-lsp-server"; };
-        }
-        { name = "rust"; }
-        { name = "python"; }
-        { name = "javascript"; }
-        { name = "typescript"; }
-      ];
-    };
-
     htop.enable = true;
 
     git = {
@@ -412,7 +323,7 @@
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
-      emacs29-macport
+      # emacs29-macport
     ];
 
 }
