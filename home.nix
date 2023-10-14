@@ -280,7 +280,7 @@
 
     java = {
       enable = true;
-      package = pkgs.jdk;
+      package = pkgs.jdk21;
     };
 
     direnv.enable = true;
@@ -352,7 +352,7 @@
       (google-cloud-sdk.withExtraComponents
         ([ google-cloud-sdk.components.gke-gcloud-auth-plugin ]))
       gopls
-      jdk
+      jdk21
       gradle
       graphviz-nox
       imagemagick
