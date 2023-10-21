@@ -227,7 +227,7 @@
       httpie
       obsidian
       d2
-      cloud-sql-proxy
+      google-cloud-sql-proxy
       k9s
       pluto
       nodePackages.dockerfile-language-server-nodejs
