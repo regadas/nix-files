@@ -202,9 +202,12 @@
       extraPackages = tpkgs: { inherit (tpkgs) scheme-full; };
     };
 
-    eza = {
+    lsd = {
       enable = true;
       enableAliases = true;
+      settings = {
+        icons.when = "never";
+      };
     };
 
     zoxide.enable = true;
