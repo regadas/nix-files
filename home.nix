@@ -215,6 +215,7 @@
 
   home.packages = with pkgs;
     [
+      ollama
       hadolint
       avro-tools
       mysql
