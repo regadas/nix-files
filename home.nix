@@ -215,6 +215,7 @@
 
   home.packages = with pkgs;
     [
+      lazygit
       ollama
       hadolint
       avro-tools
