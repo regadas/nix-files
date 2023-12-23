@@ -100,8 +100,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "edc";
             repo = "bass";
-            rev = "6effb523e4f2f5a4fb4946819796747223666be8";
-            sha256 = "sha256-h6NM7BMFnFgyGL0rwiUq8UPYEDpnivhMjfHQJua06N8=";
+            rev = "79b62958ecf4e87334f24d6743e5766475bcf4d0";
+            sha256 = "sha256-3d/qL+hovNA4VMWZ0n1L+dSM1lcz7P5CQJyy+/8exTc=";
           };
         }
         {
@@ -109,8 +109,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "pure-fish";
             repo = "pure";
-            rev = "f1b2c7049de3f5cb45e29c57a6efef005e3d03ff";
-            sha256 = "sha256-MnlqKRmMNVp6g9tet8sr5Vd8LmJAbZqLIGoDE5rlu8E=";
+            rev = "586869bdf0f336d8fdcc4efd4a169a9f53a10a36";
+            sha256 = "sha256-FzLKhV2bvgcKabMgFbVxecTIQirvXviZUyj4wjNOVhc=";
           };
         }
       ];
