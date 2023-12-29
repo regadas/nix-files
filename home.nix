@@ -174,7 +174,7 @@
       '';
     };
 
-    # broot.enable = true;
+    broot.enable = true;
 
     bat = {
       enable = true;
