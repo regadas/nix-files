@@ -24,7 +24,7 @@
       nixpkgsConfig = {
 
         config = {
-          allowBroken = true;
+          allowBroken = false;
           allowUnfree = true;
           allowUnsupportedSystem = true;
           permittedInsecurePackages = [
