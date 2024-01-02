@@ -189,9 +189,9 @@
       enable = true;
       extraConfig = ''
         return {
-          font = wezterm.font("JetBrains Mono"),
+          font = wezterm.font("Iosevka"),
           font_size = 16.0,
-          color_scheme = "Tomorrow Night",
+          color_scheme = "Modus-Operandi",
           hide_tab_bar_if_only_one_tab = true,
         }
       '';
