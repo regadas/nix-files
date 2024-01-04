@@ -250,7 +250,7 @@
       nodePackages.dockerfile-language-server-nodejs
       ltex-ls
       languagetool
-      rnix-lsp
+      nixd
       jdt-language-server
       texlab
       editorconfig-checker
