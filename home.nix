@@ -333,7 +333,7 @@
       shellcheck
       silver-searcher
       tldr
-      # trino-cli
+      trino-cli
       watch
       wget
       yarn2nix
