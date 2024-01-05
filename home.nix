@@ -223,6 +223,11 @@
     };
 
     zoxide.enable = true;
+
+    zellij = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 
   home.packages = with pkgs;
