@@ -105,12 +105,12 @@
           };
         }
         {
-          name = "pure";
+          name = "tide";
           src = pkgs.fetchFromGitHub {
-            owner = "pure-fish";
-            repo = "pure";
-            rev = "586869bdf0f336d8fdcc4efd4a169a9f53a10a36";
-            sha256 = "sha256-FzLKhV2bvgcKabMgFbVxecTIQirvXviZUyj4wjNOVhc=";
+            owner = "IlanCosman";
+            repo = "tide";
+            rev = "f798c2a1eb3147d50957d4dceae76f06a7a57bd0";
+            sha256 = "sha256-PMpFK8KQkS/BL18jktnkVT5otgmOeWC4HHA57xjn/WI=";
           };
         }
       ];
