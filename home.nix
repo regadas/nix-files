@@ -227,6 +227,22 @@
     zellij = {
       enable = true;
       enableFishIntegration = true;
+
+      settings = {
+        keybinds = {
+          unbind = [ "Ctrl o" ];
+          session = {
+            "bind \"Ctrl w\"" = {
+              SwitchToMode = "Normal";
+            };
+          };
+          "shared_except \"session\" \"locked\"" = {
+            "bind \"Ctrl w\"" = {
+              SwitchToMode = "Session";
+            };
+          };
+        };
+      };
     };
   };
 
