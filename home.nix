@@ -115,6 +115,7 @@
         }
       ];
       shellInit = ''
+        set -g EDITOR "nvim"
         set -U fish_greeting
         set -g hydro_symbol_prompt "λ"
 
