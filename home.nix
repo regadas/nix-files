@@ -192,7 +192,7 @@
         return {
           font = wezterm.font("Iosevka"),
           font_size = 16.0,
-          color_scheme = "GruvboxDark",
+          color_scheme = "catppuccin-mocha",
           hide_tab_bar_if_only_one_tab = true,
         }
       '';
