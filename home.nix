@@ -233,12 +233,12 @@
         keybinds = {
           unbind = [ "Ctrl o" ];
           session = {
-            "bind \"Ctrl w\"" = {
+            "bind \"Ctrl x\"" = {
               SwitchToMode = "Normal";
             };
           };
           "shared_except \"session\" \"locked\"" = {
-            "bind \"Ctrl w\"" = {
+            "bind \"Ctrl x\"" = {
               SwitchToMode = "Session";
             };
           };
