@@ -118,6 +118,7 @@
         set -g EDITOR "nvim"
         set -U fish_greeting
         set -g hydro_symbol_prompt "λ"
+        set -g tide_right_prompt_items
 
         # set -ga PATH ${config.xdg.configHome}/bin
         fish_add_path -gm $HOME/.local/bin
