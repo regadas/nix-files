@@ -255,7 +255,6 @@
       ollama
       hadolint
       avro-tools
-      mysql
       ocaml
       opam
       ocamlPackages.ocaml-lsp
