@@ -355,7 +355,6 @@
       scalafmt
       shellcheck
       silver-searcher
-      tldr
       trino-cli
       watch
       wget
