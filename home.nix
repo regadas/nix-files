@@ -135,6 +135,7 @@
 
         set -gx USE_GKE_GCLOUD_AUTH_PLUGIN True
         set -gx LSP_USE_PLISTS True
+        set -gx DIRENV_LOG_FORMAT ""
       '';
 
       shellAliases = {
