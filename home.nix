@@ -251,6 +251,7 @@
 
   home.packages = with pkgs;
     [
+      fd
       lazygit
       ollama
       hadolint
