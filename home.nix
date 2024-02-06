@@ -347,6 +347,7 @@
           readline
           sqlparse
           python-lsp-server
+          grip
         ]))
       ripgrep
       rustup
