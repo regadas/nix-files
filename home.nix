@@ -365,7 +365,7 @@
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
-      emacs-macport
+      # emacs-macport
     ];
 
 }
