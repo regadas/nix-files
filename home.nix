@@ -251,6 +251,7 @@
 
   home.packages = with pkgs;
     [
+      silicon
       fd
       lazygit
       ollama
