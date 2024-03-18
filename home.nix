@@ -242,6 +242,7 @@
 
   home.packages = with pkgs;
     [
+      duckdb
       silicon
       fd
       lazygit
