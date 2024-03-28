@@ -242,6 +242,7 @@
 
   home.packages = with pkgs;
     [
+      devenv
       duckdb
       silicon
       fd
