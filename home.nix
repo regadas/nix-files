@@ -292,7 +292,7 @@
       gettext
       gh
       gitAndTools.hub
-      gnupg22
+      gnupg
       gnused
       go
       (google-cloud-sdk.withExtraComponents
