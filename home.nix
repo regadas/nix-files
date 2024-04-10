@@ -314,7 +314,7 @@
       metals
       minikube
       mosh
-      nixfmt
+      nixfmt-classic
       nixpkgs-fmt
       nodePackages_latest."@astrojs/language-server"
       nodePackages.mermaid-cli
