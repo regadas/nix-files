@@ -242,6 +242,7 @@
 
   home.packages = with pkgs;
     [
+      ruby-lsp
       devenv
       duckdb
       silicon
