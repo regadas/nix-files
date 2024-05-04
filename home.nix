@@ -136,38 +136,6 @@
       };
     };
 
-    zsh = {
-      enable = true;
-      autocd = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      autosuggestion.enable = true;
-      history.extended = true;
-      shellAliases = {
-        cat = "bat";
-        git = "hub";
-        k = "kubectl";
-      };
-      plugins = [
-        {
-          name = "powerlevel10k";
-          src = pkgs.zsh-powerlevel10k;
-          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        }
-        {
-          name = "powerlevel10k-config";
-          src = lib.cleanSource ./config/p10k;
-          file = "p10k.zsh";
-        }
-      ];
-      initExtra = ''
-        export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-        export LSP_USE_PLISTS=true
-        export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=bold,underline"
-        export PATH=$PATH:/opt/homebrew/bin:$HOME/go/bin
-      '';
-    };
-
     broot.enable = true;
 
     bat = {

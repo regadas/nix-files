@@ -21,9 +21,6 @@
     extra-platforms = x86_64-darwin aarch64-darwin
   '';
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;
-
   programs.fish.enable = true;
 
   # Auto upgrade nix package and the daemon service.
