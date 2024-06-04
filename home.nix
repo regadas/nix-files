@@ -211,6 +211,7 @@
 
   home.packages = with pkgs;
     [
+      ookla-speedtest
       ruby-lsp
       devenv
       duckdb
