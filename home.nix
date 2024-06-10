@@ -297,7 +297,7 @@
       nodePackages_latest.vscode-json-languageserver
       nodePackages.yarn
       nodePackages.yo
-      nodePackages_latest.pyright
+      pyright
       nodePackages_latest.bash-language-server
       nodePackages_latest.markdownlint-cli2
       nodejs
