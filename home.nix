@@ -152,7 +152,7 @@
       enable = true;
       extraConfig = ''
         return {
-          font = wezterm.font("JetBrains Mono"),
+          font = wezterm.font("Comic Code Ligatures"),
           font_size = 16.0,
           color_scheme = "catppuccin-mocha",
           hide_tab_bar_if_only_one_tab = true,
