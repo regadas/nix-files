@@ -211,6 +211,7 @@
 
   home.packages = with pkgs;
     [
+      gh-dash
       ookla-speedtest
       ruby-lsp
       devenv
