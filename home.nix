@@ -288,18 +288,18 @@
       nixfmt-classic
       nixpkgs-fmt
       nodePackages_latest."@astrojs/language-server"
-      nodePackages.mermaid-cli
-      nodePackages.prettier
+      mermaid-cli
+      nodePackages_latest.prettier
       nodePackages_latest.sql-formatter
-      nodePackages_latest.typescript
+      typescript
       nodePackages_latest.typescript-language-server
-      nodePackages_latest.yaml-language-server
+      yaml-language-server
       nodePackages_latest.vscode-json-languageserver
-      nodePackages.yarn
-      nodePackages.yo
+      yarn
+      yo
       pyright
-      nodePackages_latest.bash-language-server
-      nodePackages_latest.markdownlint-cli2
+      bash-language-server
+      markdownlint-cli2
       nodejs
       operator-sdk
       pandoc
