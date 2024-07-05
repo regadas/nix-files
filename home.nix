@@ -212,6 +212,7 @@
   home.packages = with pkgs;
     [
       mpv
+      ffmpeg
       gh-dash
       ookla-speedtest
       ruby-lsp
