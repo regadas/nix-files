@@ -211,6 +211,7 @@
 
   home.packages = with pkgs;
     [
+      mpv
       gh-dash
       ookla-speedtest
       ruby-lsp
