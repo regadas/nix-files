@@ -144,7 +144,16 @@
       config.theme = "ansi";
     };
 
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+
+      fileWidgetOptions = [
+        "--preview '${lib.getExe pkgs.bat} --color=always --plain --line-range=:200 {}'"
+      ];
+      changeDirWidgetOptions = [
+        "--preview '${lib.getExe pkgs.tree}  -C {} | head -200'"
+      ];
+    };
 
     alacritty.enable = true;
 
