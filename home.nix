@@ -220,6 +220,7 @@
 
   home.packages = with pkgs;
     [
+      ffmpegthumbnailer
       tree
       mpv
       ffmpeg
