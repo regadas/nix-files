@@ -211,6 +211,7 @@
 
   home.packages = with pkgs;
     [
+      tree
       mpv
       ffmpeg
       gh-dash
