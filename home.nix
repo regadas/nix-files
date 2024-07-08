@@ -60,7 +60,7 @@
       extraConfig = ''
         set -ga terminal-overrides ",xterm-256color*:Tc"
         set -g mouse on
-        set -sg escape-time 10
+        set -sg escape-time 100
 
         # act like vim
         bind-key h select-pane -L
