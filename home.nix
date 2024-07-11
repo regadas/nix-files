@@ -222,7 +222,7 @@
     [
       ffmpegthumbnailer
       tree
-      mpv
+      # mpv
       ffmpeg
       gh-dash
       ookla-speedtest
