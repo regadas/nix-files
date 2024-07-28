@@ -169,9 +169,15 @@
       '';
     };
 
-    vscode = {
+    kitty = {
       enable = true;
+      font = {
+        name = "JetBrains Mono";
+        size = 16;
+      };
     };
+
+    vscode = { enable = true; };
 
     java = {
       enable = true;
