@@ -47,6 +47,22 @@
       # My `nix-darwin` configs
 
       darwinConfigurations = rec {
+        Filipes-MacBook-Air = darwinSystem {
+          system = "x86_64-darwin";
+          modules = [
+            # Main `nix-darwin` config
+            ./configuration.nix
+            # `home-manager` module
+            home-manager.darwinModules.home-manager
+            {
+              nixpkgs = nixpkgsConfig;
+              # `home-manager` config
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.regadas = import ./home.nix;
+            }
+          ];
+        };
         MacPro = darwinSystem {
           system = "x86_64-darwin";
           modules = [
