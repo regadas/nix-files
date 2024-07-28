@@ -40,7 +40,16 @@
         hub.host = "ghe.spotify.net";
       };
 
-      ignores = [ ".java_version" ".metals" "metals.sbt" ".bloop" ".idea" ".DS_Store" ".projectile" ".direnv" ];
+      ignores = [
+        ".java_version"
+        ".metals"
+        "metals.sbt"
+        ".bloop"
+        ".idea"
+        ".DS_Store"
+        ".projectile"
+        ".direnv"
+      ];
 
       delta.enable = true;
     };
@@ -51,11 +60,7 @@
       baseIndex = 1;
       keyMode = "vi";
       shortcut = "s";
-      plugins = with pkgs.tmuxPlugins; [
-        sensible
-        yank
-        catppuccin
-      ];
+      plugins = with pkgs.tmuxPlugins; [ sensible yank catppuccin ];
 
       extraConfig = ''
         set -ga terminal-overrides ",xterm-256color*:Tc"
@@ -148,11 +153,12 @@
       enable = true;
 
       fileWidgetOptions = [
-        "--preview '${lib.getExe pkgs.bat} --color=always --plain --line-range=:200 {}'"
+        "--preview '${
+          lib.getExe pkgs.bat
+        } --color=always --plain --line-range=:200 {}'"
       ];
-      changeDirWidgetOptions = [
-        "--preview '${lib.getExe pkgs.tree}  -C {} | head -200'"
-      ];
+      changeDirWidgetOptions =
+        [ "--preview '${lib.getExe pkgs.tree}  -C {} | head -200'" ];
     };
 
     alacritty = {
@@ -197,9 +203,7 @@
     lsd = {
       enable = true;
       enableAliases = true;
-      settings = {
-        icons.when = "never";
-      };
+      settings = { icons.when = "never"; };
     };
 
     zoxide.enable = true;
@@ -211,15 +215,9 @@
       settings = {
         keybinds = {
           unbind = [ "Ctrl o" ];
-          session = {
-            "bind \"Ctrl x\"" = {
-              SwitchToMode = "Normal";
-            };
-          };
+          session = { "bind \"Ctrl x\"" = { SwitchToMode = "Normal"; }; };
           "shared_except \"session\" \"locked\"" = {
-            "bind \"Ctrl x\"" = {
-              SwitchToMode = "Session";
-            };
+            "bind \"Ctrl x\"" = { SwitchToMode = "Session"; };
           };
         };
       };
@@ -328,8 +326,9 @@
       parallel
       protobuf
       ruby
-      (python3.withPackages
-        (ps: with ps; with python3Packages; [
+      (python3.withPackages (ps:
+        with ps;
+        with python3Packages; [
           pip
           readline
           sqlparse
