@@ -155,25 +155,27 @@
       ];
     };
 
-    alacritty.enable = true;
-
-    wezterm = {
+    alacritty = {
       enable = true;
-      extraConfig = ''
-        return {
-          font = wezterm.font("Comic Code Ligatures"),
-          font_size = 16.0,
-          color_scheme = "catppuccin-mocha",
-          hide_tab_bar_if_only_one_tab = true,
-        }
-      '';
-    };
-
-    kitty = {
-      enable = true;
-      font = {
-        name = "JetBrains Mono";
-        size = 16;
+      settings = {
+        window = {
+          decorations = "none";
+          option_as_alt = "Both";
+        };
+        font = {
+          size = 17;
+          normal = {
+            family = "JetBrainsMono Nerd Font";
+          };
+          bold = {
+            family = "JetBrainsMono Nerd Font";
+            style = "bold";
+          };
+          italic = {
+            family = "JetBrainsMono Nerd Font";
+            style = "italic";
+          };
+        };
       };
     };
 
