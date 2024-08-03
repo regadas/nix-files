@@ -13,12 +13,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, darwin, home-manager, ... }@inputs:
     let
 
       inherit (darwin.lib) darwinSystem;
       inherit (inputs.nixpkgs-unstable.lib)
-        attrValues makeOverridable optionalAttrs singleton;
+        attrValues optionalAttrs singleton;
 
       # Configuration for `nixpkgs`
       nixpkgsConfig = {
@@ -46,7 +46,7 @@
     {
       # My `nix-darwin` configs
 
-      darwinConfigurations = rec {
+      darwinConfigurations =  {
         Filipes-MacBook-Air = darwinSystem {
           system = "x86_64-darwin";
           modules = [
