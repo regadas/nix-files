@@ -17,82 +17,125 @@
     let
 
       inherit (darwin.lib) darwinSystem;
-      inherit (inputs.nixpkgs-unstable.lib)
-        attrValues optionalAttrs singleton;
+      inherit (inputs.nixpkgs-unstable.lib) attrValues optionalAttrs singleton;
+
+      # Main `nix-darwin` config
+      config = { pkgs, lib, ... }: {
+        users.users.regadas.home = "/Users/regadas";
+
+        nix.settings = {
+          trusted-users = [ "@admin" ];
+          substituters = [ "https://cache.nixos.org/" ];
+          trusted-public-keys = [
+            "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+          ];
+        };
+        nix.configureBuildUsers = true;
+
+        # Enable experimental nix command and flakes
+        # nix.package = pkgs.nixUnstable;
+        nix.extraOptions = ''
+          auto-optimise-store = true
+          experimental-features = nix-command flakes
+        '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
+          extra-platforms = x86_64-darwin aarch64-darwin
+        '';
+
+        programs.fish.enable = true;
+
+        # Auto upgrade nix package and the daemon service.
+        services.nix-daemon.enable = true;
+        services.yabai.enable = true;
+        services.yabai.package = pkgs.yabai;
+        services.skhd.enable = true;
+
+        launchd.user.agents.skhd.serviceConfig = {
+          StandardOutPath = "/tmp/skhd.out.log";
+          StandardErrorPath = "/tmp/skhd.err.log";
+        };
+        launchd.user.agents.yabai.serviceConfig = {
+          StandardOutPath = "/tmp/yabai.out.log";
+          StandardErrorPath = "/tmp/yabai.err.log";
+        };
+
+        # Apps
+        # `home-manager` currently has issues adding them to `~/Applications`
+        # Issue: https://github.com/nix-community/home-manager/issues/1341
+        environment.systemPackages = with pkgs; [ terminal-notifier ];
+
+        programs.nix-index.enable = true;
+
+        # Fonts
+        fonts.packages = with pkgs; [
+          recursive
+          nerdfonts
+          iosevka-bin
+          font-awesome
+          cascadia-code
+          fira-code
+          jetbrains-mono
+          ibm-plex
+          intel-one-mono
+        ];
+
+        # Keyboard
+        system.keyboard.enableKeyMapping = true;
+        system.keyboard.remapCapsLockToEscape = true;
+
+        # Add ability to used TouchID for sudo authentication
+        security.pam.enableSudoTouchIdAuth = true;
+      };
 
       # Configuration for `nixpkgs`
       nixpkgsConfig = {
-
         config = {
           allowBroken = false;
           allowUnfree = true;
           allowUnsupportedSystem = true;
-          permittedInsecurePackages = [
-            "libgcrypt-1.8.10"
-            "nix-2.16.2"
-          ];
+          permittedInsecurePackages = [ "libgcrypt-1.8.10" "nix-2.16.2" ];
         };
 
         overlays = attrValues self.overlays ++ singleton (
           # Sub in x86 version of packages that don't build on Apple Silicon yet
           final: prev:
-            (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
-              inherit (final.pkgs-x86)
-                nix-index niv purescript bazel;
-            })
-        );
+          (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
+            inherit (final.pkgs-x86) nix-index niv purescript bazel;
+          }));
       };
-    in
-    {
-      # My `nix-darwin` configs
 
-      darwinConfigurations =  {
+      # my `home-manager` module
+      homeManagerConfig = {
+        nixpkgs = nixpkgsConfig;
+        # `home-manager` config
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.regadas = import ./home.nix;
+      };
+    in {
+      # My `nix-darwin` configs
+      darwinConfigurations = {
         Filipes-MacBook-Air = darwinSystem {
           system = "x86_64-darwin";
           modules = [
-            # Main `nix-darwin` config
-            ./configuration.nix
-            # `home-manager` module
+            config
             home-manager.darwinModules.home-manager
-            {
-              nixpkgs = nixpkgsConfig;
-              # `home-manager` config
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.regadas = import ./home.nix;
-            }
+            homeManagerConfig
           ];
         };
         MacPro = darwinSystem {
           system = "x86_64-darwin";
           modules = [
-            # Main `nix-darwin` config
-            ./configuration.nix
-            # `home-manager` module
+            config
             home-manager.darwinModules.home-manager
-            {
-              nixpkgs = nixpkgsConfig;
-              # `home-manager` config
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.regadas = import ./home.nix;
-            }
+            homeManagerConfig
           ];
         };
         PN402PJ2C6 = darwinSystem {
           system = "aarch64-darwin";
           modules = [
-            # Main `nix-darwin` config
-            ./configuration.nix
-            # `home-manager` module
+            config
             home-manager.darwinModules.home-manager
-            {
-              nixpkgs = nixpkgsConfig;
-              # `home-manager` config
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.regadas = import ./home.nix;
-            }
+            homeManagerConfig
           ];
         };
       };
