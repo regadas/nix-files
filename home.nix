@@ -170,9 +170,7 @@
         };
         font = {
           size = 17;
-          normal = {
-            family = "JetBrainsMono Nerd Font";
-          };
+          normal = { family = "JetBrainsMono Nerd Font"; };
           bold = {
             family = "JetBrainsMono Nerd Font";
             style = "bold";
