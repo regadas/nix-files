@@ -307,7 +307,6 @@
       mosh
       nixfmt-classic
       nixpkgs-fmt
-      nodePackages_latest."@astrojs/language-server"
       mermaid-cli
       nodePackages_latest.prettier
       nodePackages_latest.sql-formatter
