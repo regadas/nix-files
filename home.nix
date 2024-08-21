@@ -232,7 +232,6 @@
       ruby-lsp
       devenv
       duckdb
-      silicon
       fd
       lazygit
       ollama
