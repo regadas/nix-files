@@ -51,6 +51,7 @@
         ".direnv"
       ];
 
+      delta.enable = true;
     };
 
     tmux = {
@@ -267,6 +268,7 @@
       bazel-buildtools
       coreutils
       curl
+      delta
       deno
       dhall
       dhall-json
