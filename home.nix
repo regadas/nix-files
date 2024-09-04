@@ -276,7 +276,6 @@
       ditaa
       duf
       html-tidy
-      gdb
       gettext
       gh
       gitAndTools.hub
