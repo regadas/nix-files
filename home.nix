@@ -165,11 +165,11 @@
       enable = true;
       settings = {
         window = {
-          decorations = "none";
+          # decorations = "none";
           option_as_alt = "Both";
         };
         font = {
-          size = 17;
+          size = 16;
           normal = { family = "JetBrainsMono Nerd Font"; };
           bold = {
             family = "JetBrainsMono Nerd Font";
