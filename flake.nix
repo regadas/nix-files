@@ -80,6 +80,8 @@
 
         system.stateVersion = 5;
 
+        ids.gids.nixbld = 30000;
+
         # Keyboard
         system.keyboard.enableKeyMapping = true;
         system.keyboard.remapCapsLockToEscape = true;
