@@ -78,6 +78,8 @@
           intel-one-mono
         ];
 
+        system.stateVersion = 5;
+
         # Keyboard
         system.keyboard.enableKeyMapping = true;
         system.keyboard.remapCapsLockToEscape = true;
