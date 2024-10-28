@@ -267,7 +267,6 @@
       bazel-buildtools
       coreutils
       curl
-      delta
       deno
       dhall
       dhall-json
