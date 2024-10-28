@@ -272,7 +272,6 @@
       dhall
       dhall-json
       dhall-lsp-server
-      ditaa
       duf
       html-tidy
       gettext
