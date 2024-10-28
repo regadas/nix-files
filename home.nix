@@ -300,7 +300,7 @@
       maven
       metals
       minikube
-      mosh
+      # mosh
       nixfmt-classic
       nixpkgs-fmt
       mermaid-cli
