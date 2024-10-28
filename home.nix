@@ -226,7 +226,6 @@
     [
       ffmpegthumbnailer
       tree
-      # mpv
       ffmpeg
       gh-dash
       ookla-speedtest
@@ -300,7 +299,6 @@
       maven
       metals
       minikube
-      # mosh
       nixfmt-classic
       nixpkgs-fmt
       mermaid-cli
@@ -346,7 +344,6 @@
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
-      # emacs-macport
     ];
 
 }
