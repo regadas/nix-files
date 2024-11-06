@@ -91,6 +91,12 @@
 
     nushell = {
       enable = true;
+
+      shellAliases = {
+        cat = "bat";
+        git = "hub";
+        k = "kubectl";
+      };
     };
 
     fish = {
