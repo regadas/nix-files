@@ -67,6 +67,10 @@
         set -g mouse on
         set -sg escape-time 100
 
+        set-option -g status-position top
+        set-option -g default-shell $SHELL
+        set-option -g default-command $SHELL
+
         # act like vim
         bind-key h select-pane -L
         bind-key j select-pane -D
