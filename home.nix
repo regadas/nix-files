@@ -175,6 +175,19 @@
         [ "--preview '${lib.getExe pkgs.tree}  -C {} | head -200'" ];
     };
 
+    wezterm = {
+      enable = true;
+      extraConfig = ''
+        return {
+          front_end = "WebGpu",
+          font = wezterm.font("Comic Code Ligatures"),
+          font_size = 15.0,
+          color_scheme = "catppuccin-mocha",
+          hide_tab_bar_if_only_one_tab = true,
+        }
+      '';
+    };
+
     alacritty = {
       enable = true;
       settings = {
