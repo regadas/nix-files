@@ -115,6 +115,23 @@
         home-manager.useUserPackages = true;
         home-manager.users.regadas = import ./home.nix;
       };
+
+      homebrewConfig = {
+        homebrew = {
+          enable = true;
+          onActivation = {
+            autoUpdate = true;
+            cleanup = "zap";
+          };
+          brews = [{
+            name = "emacs-plus@30";
+            args =
+              [ "with-xwidgets" "with-native-comp" "with-imagemagick" ];
+          }];
+          taps = [ "d12frosted/emacs-plus" ];
+          # casks = [ "nikitabobko/tap/aerospace" ];
+        };
+      };
     in {
       # My `nix-darwin` configs
       darwinConfigurations = {
@@ -140,6 +157,7 @@
             config
             home-manager.darwinModules.home-manager
             homeManagerConfig
+            homebrewConfig
           ];
         };
       };
