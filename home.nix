@@ -251,6 +251,7 @@
 
   home.packages = with pkgs;
     [
+      cmake
       ffmpegthumbnailer
       tree
       ffmpeg
