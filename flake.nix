@@ -68,7 +68,10 @@
         # Fonts
         fonts.packages = with pkgs; [
           recursive
-          nerdfonts
+          nerd-fonts.iosevka
+          nerd-fonts.jetbrains-mono
+          nerd-fonts.fira-code
+          nerd-fonts.blex-mono
           iosevka-bin
           font-awesome
           cascadia-code
