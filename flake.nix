@@ -99,7 +99,6 @@
           allowBroken = false;
           allowUnfree = true;
           allowUnsupportedSystem = true;
-          permittedInsecurePackages = [ "libgcrypt-1.8.10" "nix-2.16.2" ];
         };
 
         overlays = attrValues self.overlays ++ singleton (
