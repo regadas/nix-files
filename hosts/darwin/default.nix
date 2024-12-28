@@ -1,6 +1,4 @@
-{ self, pkgs, inputs, ... }:
-let inherit (inputs.nixpkgs-unstable.lib) attrValues optionalAttrs singleton;
-in {
+{ pkgs, ... }: {
   # nixpkgs.overlays = attrValues self.overlays ++ singleton (
   #   # Sub in x86 version of packages that don't build on Apple Silicon yet
   #   final: prev:
