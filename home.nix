@@ -312,7 +312,7 @@
       colima
       act
       avro-tools
-      bazel_5
+      # bazel_7
       bazel-buildtools
       coreutils
       curl
