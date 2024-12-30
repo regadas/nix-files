@@ -71,22 +71,6 @@
         system.keyboard.enableKeyMapping = true;
         system.keyboard.remapCapsLockToEscape = true;
 
-        nixpkgs = {
-          config = {
-            allowBroken = false;
-            allowUnfree = true;
-            allowUnsupportedSystem = true;
-          };
-        };
-      };
-
-      homeManagerConfig = {
-        # `home-manager` config
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.regadas = import ./home.nix;
-        };
       };
 
     in {
@@ -98,7 +82,6 @@
           modules = [
             config
             home-manager.darwinModules.home-manager
-            homeManagerConfig
             ./hosts/darwin
           ];
         };
@@ -108,7 +91,6 @@
           modules = [
             config
             home-manager.darwinModules.home-manager
-            homeManagerConfig
             ./hosts/darwin
           ];
         };
@@ -118,7 +100,6 @@
           modules = [
             config
             home-manager.darwinModules.home-manager
-            homeManagerConfig
             ./hosts/darwin
           ];
         };

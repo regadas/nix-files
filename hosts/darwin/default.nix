@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+
+  imports = [ ../../modules/shared ];
+
   users.users.regadas.home = "/Users/regadas";
 
   # Add ability to used TouchID for sudo authentication
