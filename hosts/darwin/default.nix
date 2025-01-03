@@ -33,6 +33,7 @@
       upgrade = true;
     };
     brews = [
+      "parquet-cli"
       "zlib"
       {
         name = "emacs-plus@30";
