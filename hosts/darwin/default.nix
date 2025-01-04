@@ -34,6 +34,7 @@
     };
     brews = [
       "parquet-cli"
+      "gcc"
       "zlib"
       {
         name = "emacs-plus@30";
