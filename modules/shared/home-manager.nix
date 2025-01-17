@@ -180,7 +180,7 @@
       extraConfig = ''
         return {
           front_end = "WebGpu",
-          font = wezterm.font("Comic Code Ligatures"),
+          font = wezterm.font("TX-02"),
           font_size = 15.0,
           color_scheme = "catppuccin-mocha",
           hide_tab_bar_if_only_one_tab = true,
