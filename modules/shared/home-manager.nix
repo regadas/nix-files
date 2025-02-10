@@ -272,8 +272,6 @@
   home.packages = with pkgs;
     [
       uv
-      gnumake
-      cmake
       ffmpegthumbnailer
       tree
       ffmpeg
