@@ -295,7 +295,6 @@
       krew
       marksman
       httpie
-      obsidian
       d2
       google-cloud-sql-proxy
       k9s
