@@ -116,20 +116,20 @@
           };
         }
         {
-          name = "tide";
+          name = "hydro";
           src = pkgs.fetchFromGitHub {
-            owner = "IlanCosman";
-            repo = "tide";
-            rev = "812fb9b6d6e0d8c2b575d3fe0c7b31a796214bc4";
-            sha256 = "sha256-cGfvWi9r3rA9QFBewW7A+LXS2DavSUtWzk9/NbxEV48=";
+            owner = "jorgebucaran";
+            repo = "hydro";
+            rev = "75ab7168a35358b3d08eeefad4ff0dd306bd80d4";
+            sha256 = "sha256-QYq4sU41/iKvDUczWLYRGqDQpVASF/+6brJJ8IxypjE=";
           };
         }
       ];
       shellInit = ''
         set -g EDITOR "nvim"
         set -U fish_greeting
-        set -g hydro_symbol_prompt "λ"
-        set -g tide_right_prompt_items
+
+        set -g hydro_multiline true
 
         # set -ga PATH ${config.xdg.configHome}/bin
         fish_add_path -gm $HOME/.local/bin
