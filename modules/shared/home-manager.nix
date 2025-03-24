@@ -355,7 +355,6 @@
       yaml-language-server
       nodePackages_latest.vscode-json-languageserver
       yarn
-      yo
       pyright
       bash-language-server
       markdownlint-cli2
