@@ -271,6 +271,7 @@
 
   home.packages = with pkgs;
     [
+      pqrs
       uv
       ffmpegthumbnailer
       tree

@@ -33,7 +33,6 @@
       upgrade = true;
     };
     brews = [
-      "parquet-cli"
       "gcc"
       "libgccjit"
       "zlib"
