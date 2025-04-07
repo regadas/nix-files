@@ -214,7 +214,7 @@
 
     java = {
       enable = true;
-      package = pkgs.jdk21;
+      package = pkgs.temurin-bin-23;
     };
 
     direnv = {
@@ -330,7 +330,6 @@
       (google-cloud-sdk.withExtraComponents
         [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       gopls
-      jdk21
       gradle
       graphviz-nox
       imagemagick
