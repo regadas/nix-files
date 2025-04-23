@@ -135,6 +135,7 @@
         fish_add_path -gm $HOME/.local/bin
         fish_add_path -gm $HOME/go/bin
         fish_add_path -gm $HOME/.krew/bin
+        fish_add_path -gm $HOME/.cargo/bin
 
         if test $KERNEL_NAME darwin
           fish_add_path -gm /opt/homebrew/opt/llvm/bin
