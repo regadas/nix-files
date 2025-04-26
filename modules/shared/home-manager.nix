@@ -364,15 +364,10 @@
       parallel
       protobuf
       ruby
-      (python3.withPackages (ps:
-        with ps;
-        with python3Packages; [
-          pip
-          readline
-          sqlparse
-          python-lsp-server
-          grip
-        ]))
+      python313
+      python313Packages.sqlparse
+      python313Packages.python-lsp-server
+      python313Packages.grip
       ripgrep
       rustup
       sbt
