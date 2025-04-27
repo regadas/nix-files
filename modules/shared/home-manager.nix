@@ -382,6 +382,7 @@
       yarn2nix
       yq-go
     ] ++ lib.optionals stdenv.isDarwin [
+      stats
       cocoapods
       m-cli # useful macOS CLI commands
     ];
