@@ -272,6 +272,7 @@
 
   home.packages = with pkgs;
     [
+      talosctl
       pqrs
       uv
       ffmpegthumbnailer
