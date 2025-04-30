@@ -248,7 +248,7 @@
 
     lsd = {
       enable = true;
-      enableAliases = true;
+      enableFishIntegration = true;
       settings = { icons.when = "never"; };
     };
 
