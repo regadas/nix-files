@@ -272,6 +272,7 @@
 
   home.packages = with pkgs;
     [
+      claude-code
       talosctl
       pqrs
       uv
