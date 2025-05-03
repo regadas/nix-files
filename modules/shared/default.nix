@@ -16,6 +16,12 @@
     extra-platforms = x86_64-darwin aarch64-darwin
   '';
 
+  # System-wide direnv configuration for nix integration
+  programs.nix-direnv = {
+    enable = true;
+    enableFlakes = true;
+  };
+
   programs.fish.enable = true;
 
   programs.nix-index.enable = true;
