@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, hostname, ... }: {
 
   imports = [ ../../modules/shared ];
 

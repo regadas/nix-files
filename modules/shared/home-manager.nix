@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Disable Home Manager release check since we're using flake pinning
+  home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "24.11";
 
   programs = {
@@ -248,7 +250,6 @@
 
     lsd = {
       enable = true;
-      enableFishIntegration = true;
       settings = { icons.when = "never"; };
     };
 
