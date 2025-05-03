@@ -37,8 +37,26 @@
           ./hosts/darwin
         ] ++ modules;
       };
+      
+      # Helper function for standalone home-manager configs
+      mkHomeConfig = { system, username ? "regadas" }: 
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs-unstable.legacyPackages.${system};
+          modules = [
+            ./modules/shared/home-manager.nix
+            {
+              home = {
+                username = username;
+                homeDirectory = "/Users/${username}";
+                # Enable this line if you want very precise control over state management:
+                # stateVersion = "24.11";
+              };
+            }
+          ];
+          extraSpecialArgs = inputs // { inherit system; };
+        };
     in {
-      # My `nix-darwin` configs
+      # My `nix-darwin` configs - integrated mode
       darwinConfigurations = {
         # x86_64 systems
         Filipes-MacBook-Air = mkDarwinConfig {
@@ -55,6 +73,18 @@
         PN402PJ2C6 = mkDarwinConfig {
           system = "aarch64-darwin";
           hostname = "PN402PJ2C6";
+        };
+      };
+      
+      # Standalone home-manager configurations - can be used with:
+      # home-manager switch --flake .#regadas-x86_64-darwin
+      homeConfigurations = {
+        "regadas-x86_64-darwin" = mkHomeConfig {
+          system = "x86_64-darwin";
+        };
+        
+        "regadas-aarch64-darwin" = mkHomeConfig {
+          system = "aarch64-darwin";
         };
       };
       
