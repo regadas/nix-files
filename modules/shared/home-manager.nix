@@ -273,6 +273,8 @@
 
   home.packages = with pkgs;
     [
+      # Tools
+      cachix           # Binary cache management
       claude-code
       talosctl
       pqrs
