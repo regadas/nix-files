@@ -16,9 +16,6 @@
     extra-platforms = x86_64-darwin aarch64-darwin
   '';
 
-  # Enable direnv with nix integration
-  programs.direnv.enable = true;
-
   programs.fish.enable = true;
 
   programs.nix-index.enable = true;
