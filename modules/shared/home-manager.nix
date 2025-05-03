@@ -313,7 +313,6 @@
       hugo
       colima
       act
-      avro-tools
       # bazel_7
       bazel-buildtools
       coreutils
@@ -325,8 +324,7 @@
       duf
       html-tidy
       gettext
-      gh
-      gitAndTools.hub
+      gitAndTools.hub  # Keeping hub since you have aliases for it
       gnupg
       gnused
       go
