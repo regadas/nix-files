@@ -217,7 +217,7 @@
 
     java = {
       enable = true;
-      package = pkgs.temurin-bin-23;
+      package = pkgs.temurin-bin-24;
     };
 
     direnv = {
