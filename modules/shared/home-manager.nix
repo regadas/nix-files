@@ -92,6 +92,9 @@
 
         # don't suspend-client
         unbind-key C-z
+
+        bind-key -T copy-mode-vi WheelUpPane send -N1 -X scroll-up
+        bind-key -T copy-mode-vi WheelDownPane send -N1 -X scroll-down
       '';
     };
 
