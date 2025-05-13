@@ -331,7 +331,7 @@
       duf
       html-tidy
       gettext
-      gitAndTools.hub  # Keeping hub since you have aliases for it
+      gitAndTools.hub # Keeping hub since you have aliases for it
       gnupg
       gnused
       go
