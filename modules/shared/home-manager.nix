@@ -276,6 +276,7 @@
 
   home.packages = with pkgs;
     [
+      obsidian
       sesh
       cachix
       claude-code
