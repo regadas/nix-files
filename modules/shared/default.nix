@@ -77,6 +77,8 @@
 
   system.stateVersion = 5;
 
+  system.primaryUser = "regadas";
+
   ids.gids.nixbld = 30000;
 
   # Keyboard
