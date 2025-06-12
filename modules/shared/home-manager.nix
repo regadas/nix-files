@@ -276,6 +276,7 @@
 
   home.packages = with pkgs;
     [
+      copilot-language-server
       obsidian
       sesh
       cachix
