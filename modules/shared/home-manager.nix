@@ -272,6 +272,12 @@
         };
       };
     };
+
+    atuin = {
+      enable = true;
+      enableFishIntegration = true;
+      daemon.enable = true;
+    };
   };
 
   home.packages = with pkgs;
