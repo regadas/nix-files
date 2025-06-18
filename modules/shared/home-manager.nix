@@ -282,6 +282,7 @@
 
   home.packages = with pkgs;
     [
+      aider-chat-full
       copilot-language-server
       obsidian
       sesh
