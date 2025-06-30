@@ -37,8 +37,8 @@
       "libgccjit"
       "zlib"
       {
-        name = "emacs-plus@31";
-        args = [ "with-xwidgets" "with-native-comp" "with-imagemagick" ];
+        name = "emacs-plus@30";
+        args = [ "with-xwidgets" "with-imagemagick" ];
       }
     ];
     taps = [ "d12frosted/emacs-plus" ];
