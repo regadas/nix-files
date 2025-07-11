@@ -274,8 +274,9 @@
     };
 
     atuin = {
-      enable = true;
+      enable = false;
       enableFishIntegration = true;
+      enableNushellIntegration = true;
       daemon.enable = true;
     };
   };
