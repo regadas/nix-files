@@ -37,7 +37,7 @@
       "libgccjit"
       "zlib"
       {
-        name = "emacs-plus@30";
+        name = "emacs-plus@31";
         args = [ "with-xwidgets" "with-imagemagick" ];
       }
     ];
