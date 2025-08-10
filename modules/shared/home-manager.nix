@@ -101,6 +101,21 @@
     nushell = {
       enable = true;
 
+      settings = {
+        show_banner = false;
+      };
+
+      environmentVariables = {
+        EDITOR = "code";
+        VISUAL = "code";
+        PAGER = "less";
+        LESS = "-R";
+        USE_GKE_GCLOUD_AUTH_PLUGIN = "True";
+        LSP_USE_PLISTS = "True";
+        DIRENV_LOG_FORMAT = "";
+        # SHELL = "nu";
+      };
+
       shellAliases = {
         cat = "bat";
         git = "hub";
