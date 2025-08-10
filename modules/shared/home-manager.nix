@@ -316,8 +316,8 @@
       devenv
       duckdb
       fd
-      lazygit
       ollama
+      gitu
       hadolint
       avro-tools
       ocaml
