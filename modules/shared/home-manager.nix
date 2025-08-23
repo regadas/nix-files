@@ -188,7 +188,7 @@
       enable = true;
 
       fileWidgetOptions = [
-        "--preview '${
+        "--preview '${ 
           lib.getExe pkgs.bat
         } --color=always --plain --line-range=:200 {}'"
       ];
