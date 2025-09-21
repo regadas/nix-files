@@ -397,7 +397,7 @@
       python313
       python313Packages.sqlparse
       python313Packages.python-lsp-server
-      python313Packages.grip
+      go-grip
       ripgrep
       rustup
       sbt
