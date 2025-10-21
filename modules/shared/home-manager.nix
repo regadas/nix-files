@@ -240,7 +240,7 @@
 
     java = {
       enable = true;
-      package = pkgs.temurin-bin-24;
+      package = pkgs.temurin-bin;
     };
 
     direnv = {
