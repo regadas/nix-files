@@ -18,21 +18,23 @@
 
     git = {
       enable = true;
-      userName = "regadas";
-      userEmail = "oss@regadas.email";
 
       signing = {
         key = "55A043A0";
         signByDefault = true;
       };
 
-      aliases = {
-        s = "status";
-        l =
-          "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-      };
+      settings = {
+        user = {
+          name = "regadas";
+          email = "oss@regadas.email";
+        };
 
-      extraConfig = {
+        alias = {
+          s = "status";
+          l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+        };
+
         color.ui = true;
         branch.autosetuprebase = "always";
         rebase.autoStash = true;
@@ -52,8 +54,11 @@
         ".projectile"
         ".direnv"
       ];
+    };
 
-      delta.enable = true;
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
     };
 
     tmux = {
