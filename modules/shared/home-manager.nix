@@ -193,7 +193,7 @@
       enable = true;
 
       fileWidgetOptions = [
-        "--preview '${ 
+        "--preview '${
           lib.getExe pkgs.bat
         } --color=always --plain --line-range=:200 {}'"
       ];
@@ -338,7 +338,7 @@
       google-cloud-sql-proxy
       k9s
       pluto
-      nodePackages.dockerfile-language-server-nodejs
+      dockerfile-language-server
       ltex-ls
       languagetool
       nixd
