@@ -383,6 +383,7 @@
       nixfmt-classic
       nixpkgs-fmt
       mermaid-cli
+      sqlfluff
       nodePackages_latest.prettier
       nodePackages_latest.sql-formatter
       typescript
