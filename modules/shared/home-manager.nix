@@ -370,7 +370,7 @@
       duf
       html-tidy
       gettext
-      hub 
+      hub
       gnupg
       gnused
       go
