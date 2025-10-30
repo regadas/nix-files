@@ -79,6 +79,10 @@
         set-option -g default-shell $SHELL
         set-option -g default-command $SHELL
 
+        # New panes open in the same directory
+        bind '"' split-window -c "#{pane_current_path}"
+        bind % split-window -h -c "#{pane_current_path}"
+
         # act like vim
         bind-key h select-pane -L
         bind-key j select-pane -D
@@ -86,6 +90,12 @@
         bind-key l select-pane -R
         bind-key -r C-h select-window -t :-
         bind-key -r C-l select-window -t :+
+
+        # Navigate panes with Shift+Ctrl+hjkl
+        bind-key -n C-S-h select-pane -L
+        bind-key -n C-S-j select-pane -D
+        bind-key -n C-S-k select-pane -U
+        bind-key -n C-S-l select-pane -R
 
         # set -g prefix2 C-s
         # renumber windows sequentially after closing any of them
