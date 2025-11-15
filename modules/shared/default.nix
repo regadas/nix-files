@@ -79,7 +79,7 @@
 
   system.primaryUser = "regadas";
 
-  ids.gids.nixbld = 30000;
+  ids.gids.nixbld = 350;
 
   # Keyboard
   system.keyboard.enableKeyMapping = true;

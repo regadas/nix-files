@@ -74,6 +74,11 @@
           system = "aarch64-darwin";
           hostname = "PN402PJ2C6";
         };
+
+        L2TX7X6LDP = mkDarwinConfig {
+          system = "aarch64-darwin";
+          hostname = "L2TX7X6LDP";
+        };
       };
       
       # Standalone home-manager configurations - can be used with:
