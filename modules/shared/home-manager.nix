@@ -43,6 +43,7 @@
         init.defaultBranch = "main";
         push.default = "tracking";
         hub.host = "ghe.spotify.net";
+        hub.protocol = "ssh";
       };
 
       ignores = [
