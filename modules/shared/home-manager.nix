@@ -357,7 +357,7 @@
       texlab
       editorconfig-checker
       hugo
-      colima
+      # colima
       act
       # bazel_7
       bazel-buildtools
