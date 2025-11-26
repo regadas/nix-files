@@ -332,7 +332,6 @@
       devenv
       duckdb
       fd
-      ollama
       gitu
       hadolint
       avro-tools
