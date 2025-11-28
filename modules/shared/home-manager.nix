@@ -371,6 +371,7 @@
       html-tidy
       gettext
       hub
+      gh
       gnupg
       gnused
       go
