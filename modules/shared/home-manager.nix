@@ -319,6 +319,7 @@
       obsidian
       sesh
       cachix
+      gemini-cli-bin
       claude-code
       talosctl
       pqrs
