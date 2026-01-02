@@ -14,7 +14,7 @@
       withNodeJs = true;
     };
 
-    htop.enable = true;
+    btop.enable = true;
 
     git = {
       enable = true;
