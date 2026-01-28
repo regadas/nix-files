@@ -400,7 +400,7 @@
       nodePackages_latest.prettier
       nodePackages_latest.sql-formatter
       typescript
-      nodePackages_latest.typescript-language-server
+      typescript-language-server
       yaml-language-server
       nodePackages_latest.vscode-json-languageserver
       yarn
