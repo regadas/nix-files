@@ -402,7 +402,7 @@
       typescript
       typescript-language-server
       yaml-language-server
-      nodePackages_latest.vscode-json-languageserver
+      vscode-json-languageserver
       yarn
       pyright
       bash-language-server
