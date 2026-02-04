@@ -118,9 +118,7 @@
     nushell = {
       enable = true;
 
-      settings = {
-        show_banner = false;
-      };
+      settings = { show_banner = false; };
 
       environmentVariables = {
         EDITOR = "code";
