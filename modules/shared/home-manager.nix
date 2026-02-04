@@ -331,7 +331,6 @@
       devenv
       duckdb
       fd
-      gitu
       hadolint
       avro-tools
       ocaml
