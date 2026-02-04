@@ -390,7 +390,7 @@
       maven
       metals
       minikube
-      nixfmt-classic
+      nixfmt
       nixpkgs-fmt
       mermaid-cli
       sqlfluff
