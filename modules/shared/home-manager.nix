@@ -335,7 +335,7 @@
       sesh
       cachix
       gemini-cli-bin
-      claude-code
+      # claude-code
       talosctl
       pqrs
       uv
