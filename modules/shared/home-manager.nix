@@ -72,6 +72,21 @@
       plugins = with pkgs.tmuxPlugins; [ sensible yank catppuccin ];
 
       extraConfig = ''
+        # -- Catppuccin theme (set before plugin loads) --
+        set -g @catppuccin_flavor "mocha"
+        set -g @catppuccin_status_background "none"
+
+        # Window tabs
+        set -g @catppuccin_window_status_style "basic"
+        set -g @catppuccin_window_number_position "left"
+        set -g @catppuccin_window_text " #W"
+        set -g @catppuccin_window_current_text " #W"
+        set -g @catppuccin_window_flags "icon"
+
+        # Pane borders
+        set -g @catppuccin_pane_border_style "fg=#{@thm_surface_0}"
+        set -g @catppuccin_pane_active_border_style "fg=#{@thm_lavender}"
+
         set -ga terminal-overrides ",xterm-256color*:Tc"
         set -g mouse on
         set -sg escape-time 100
@@ -79,6 +94,10 @@
         set-option -g status-position top
         set-option -g default-shell $SHELL
         set-option -g default-command $SHELL
+
+        # Status bar — windows only
+        set -g status-left " "
+        set -g status-right ""
 
         # New panes open in the same directory
         bind '"' split-window -c "#{pane_current_path}"
@@ -98,7 +117,6 @@
         bind-key -n C-S-k select-pane -U
         bind-key -n C-S-l select-pane -R
 
-        # set -g prefix2 C-s
         # renumber windows sequentially after closing any of them
         set -g renumber-windows on
 
@@ -250,7 +268,7 @@
 
     java = {
       enable = true;
-      package = pkgs.temurin-bin-25;
+      package = pkgs.temurin-bin-21;
     };
 
     direnv = {
@@ -345,6 +363,7 @@
       gh-dash
       ookla-speedtest
       ruby-lsp
+      just-lsp
       devenv
       duckdb
       fd
@@ -433,6 +452,7 @@
       go-grip
       ripgrep
       rustup
+      coursier
       sbt
       scala
       scala-cli
