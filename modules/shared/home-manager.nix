@@ -44,6 +44,8 @@
         push.default = "tracking";
         hub.host = "ghe.spotify.net";
         hub.protocol = "ssh";
+        github.user = "regadas";
+        github."ghe.spotify.net/api/v3".user = "regadas";
       };
 
       ignores = [
