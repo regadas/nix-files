@@ -236,7 +236,7 @@
       extraConfig = ''
         return {
           front_end = "WebGpu",
-          font = wezterm.font("TX-02"),
+          font = wezterm.font("Iosevka SS14"),
           font_size = 15.0,
           color_scheme = "catppuccin-mocha",
           hide_tab_bar_if_only_one_tab = true,
@@ -253,13 +253,13 @@
         };
         font = {
           size = 16;
-          normal = { family = "JetBrainsMono Nerd Font"; };
+          normal = { family = "Iosevka SS14"; };
           bold = {
-            family = "JetBrainsMono Nerd Font";
+            family = "Iosevka SS14";
             style = "bold";
           };
           italic = {
-            family = "JetBrainsMono Nerd Font";
+            family = "Iosevka SS14";
             style = "italic";
           };
         };

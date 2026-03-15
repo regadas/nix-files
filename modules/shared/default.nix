@@ -66,7 +66,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
     nerd-fonts.blex-mono
-    iosevka-bin
+    (iosevka-bin.override { variant = "SS14"; })
     font-awesome
     cascadia-code
     fira-code
