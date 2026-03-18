@@ -57,6 +57,7 @@
         ".DS_Store"
         ".projectile"
         ".direnv"
+        ".claude/setting.local.json"
       ];
     };
 
