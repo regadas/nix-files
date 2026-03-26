@@ -20,6 +20,7 @@
       enable = true;
 
       signing = {
+        format = "openpgp";
         key = "55A043A0";
         signByDefault = true;
       };
