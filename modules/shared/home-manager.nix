@@ -1,64 +1,9 @@
 { config, pkgs, lib, ... }:
 
 let
-  mdopen = pkgs.rustPlatform.buildRustPackage rec {
-    pname = "mdopen";
-    version = "0.5.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "immanelg";
-      repo = "mdopen";
-      rev = "3858a4d2222ac789b168729ac1ae7b726342526e";
-      hash = "sha256-a0yhi0oRQTl3lIAkzar7hgCYM6gDX6YQ9Oc18/jYlwg=";
-    };
-    cargoHash = "sha256-fr7gd61NxKjuYUFePPx4qil2owzfCF6kDMlOga4AfCE=";
-    doCheck = false;
-    meta = {
-      description = "Preview markdown files in a browser";
-      homepage = "https://github.com/immanelg/mdopen";
-      license = lib.licenses.bsd3;
-    };
-  };
-
-  claude-agent-acp = pkgs.buildNpmPackage rec {
-    pname = "claude-agent-acp";
-    version = "0.24.2";
-    src = pkgs.fetchFromGitHub {
-      owner = "zed-industries";
-      repo = "claude-agent-acp";
-      rev = "v${version}";
-      hash = "sha256-SRVbLcGrH5pJt6yfM0ObSso68M+yGateIVYf/kFVDhE=";
-    };
-    npmDepsHash = "sha256-V5lBQNhpL+/Mok9bEVSOrrHSv9B9pXKJswcXW+QDnAs=";
-    meta = {
-      description = "Zed's Claude Agent ACP bridge";
-      homepage = "https://github.com/zed-industries/claude-agent-acp";
-      license = lib.licenses.asl20;
-    };
-  };
-
-  codex-acp = pkgs.buildNpmPackage rec {
-    pname = "codex-acp";
-    version = "0.10.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "zed-industries";
-      repo = "codex-acp";
-      rev = "v${version}";
-      hash = "sha256-pFlQ1ETjSfZ9oDhJ3J6AWgTyfLSPWf6oFJ/UiOTqVU8=";
-    };
-    sourceRoot = "${src.name}/npm";
-    postPatch = ''
-      cat > package-lock.json << 'LOCKFILE'
-      {"name":"@zed-industries/codex-acp","version":"0.10.0","lockfileVersion":3,"requires":true,"packages":{"":{"name":"@zed-industries/codex-acp","version":"0.10.0","license":"Apache-2.0","optionalDependencies":{"@zed-industries/codex-acp-darwin-arm64":"0.10.0","@zed-industries/codex-acp-darwin-x64":"0.10.0","@zed-industries/codex-acp-linux-arm64":"0.10.0","@zed-industries/codex-acp-linux-x64":"0.10.0","@zed-industries/codex-acp-win32-arm64":"0.10.0","@zed-industries/codex-acp-win32-x64":"0.10.0"}},"node_modules/@zed-industries/codex-acp-darwin-arm64":{"version":"0.10.0","resolved":"https://registry.npmjs.org/@zed-industries/codex-acp-darwin-arm64/-/codex-acp-darwin-arm64-0.10.0.tgz","integrity":"sha512-zlIZH+X2aEfxC5UgnIoYbX0cG3/MpRUsQAGJbrcBbgKp0mhuBFtMJHZ426JC5rb3pv8amo1MmDeARZUQ99U/CQ==","cpu":["arm64"],"license":"Apache-2.0","optional":true,"os":["darwin"]},"node_modules/@zed-industries/codex-acp-darwin-x64":{"version":"0.10.0","resolved":"https://registry.npmjs.org/@zed-industries/codex-acp-darwin-x64/-/codex-acp-darwin-x64-0.10.0.tgz","integrity":"sha512-TFMF9YqfWplnYpWRaUauRbtps1ow1S47MVcBv21/Sd55gRMWWYWSogRLDyAcoMC4y9pdI2bYhx33u7jYhJnj5w==","cpu":["x64"],"license":"Apache-2.0","optional":true,"os":["darwin"]},"node_modules/@zed-industries/codex-acp-linux-arm64":{"version":"0.10.0","resolved":"https://registry.npmjs.org/@zed-industries/codex-acp-linux-arm64/-/codex-acp-linux-arm64-0.10.0.tgz","integrity":"sha512-tIm0uGKZuirZyqx9KAgIgh6cimVXdh+BMTFyUfH1xnez5Y3B6oFxzup/ZIP34OZ/W59Cnfi4wcIL3No0VV6Kmw==","cpu":["arm64"],"license":"Apache-2.0","optional":true,"os":["linux"]},"node_modules/@zed-industries/codex-acp-linux-x64":{"version":"0.10.0","resolved":"https://registry.npmjs.org/@zed-industries/codex-acp-linux-x64/-/codex-acp-linux-x64-0.10.0.tgz","integrity":"sha512-oiiN35wsecX1OwesV/KIu72o1OSw+OWFL86vQUUZTdfMXr9eyYFP1uZYLMxIx+tkhlJnm7KHC5L4raDg/MLVtA==","cpu":["x64"],"license":"Apache-2.0","optional":true,"os":["linux"]},"node_modules/@zed-industries/codex-acp-win32-arm64":{"version":"0.10.0","resolved":"https://registry.npmjs.org/@zed-industries/codex-acp-win32-arm64/-/codex-acp-win32-arm64-0.10.0.tgz","integrity":"sha512-dfybabjibQQpXUs9TjwLjg+mrj8tGSopVcwkFy8u3XG4hrBZVCri91dtVhm7hs98lZlawxwiiPuj4Pmg+4hHyQ==","cpu":["arm64"],"license":"Apache-2.0","optional":true,"os":["win32"]},"node_modules/@zed-industries/codex-acp-win32-x64":{"version":"0.10.0","resolved":"https://registry.npmjs.org/@zed-industries/codex-acp-win32-x64/-/codex-acp-win32-x64-0.10.0.tgz","integrity":"sha512-xCm3xsE3lD66DlbaLKBqHahPY1Lhb+rGu2IIq60qUsBGiYcSXtpRjQ1LXI/Sym6iCKrPo+eQP0j6rg7CPh1AGw==","cpu":["x64"],"license":"Apache-2.0","optional":true,"os":["win32"]}}}
-      LOCKFILE
-    '';
-    npmDepsHash = "sha256-m5wOFzqQ7c5D066/RLs3kEil0QFKoGzoSHH3yrlUeCM=";
-    dontNpmBuild = true;
-    meta = {
-      description = "An ACP-compatible coding agent powered by Codex";
-      homepage = "https://github.com/zed-industries/codex-acp";
-      license = lib.licenses.asl20;
-    };
-  };
+  mdopen = pkgs.callPackage ../../packages/mdopen.nix {};
+  claude-agent-acp = pkgs.callPackage ../../packages/claude-agent-acp.nix {};
+  codex-acp = pkgs.callPackage ../../packages/codex-acp.nix {};
 in
 {
   # Disable Home Manager release check since we're using flake pinning
