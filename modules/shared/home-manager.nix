@@ -64,6 +64,7 @@ in
         ".projectile"
         ".direnv"
         ".claude/setting.local.json"
+        ".agent-shell"
       ];
     };
 
