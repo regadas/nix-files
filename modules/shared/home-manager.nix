@@ -149,8 +149,8 @@ in
       settings = { show_banner = false; };
 
       environmentVariables = {
-        EDITOR = "code";
-        VISUAL = "code";
+        EDITOR = "emacsclient";
+        VISUAL = "emacsclient";
         PAGER = "less";
         LESS = "-R";
         USE_GKE_GCLOUD_AUTH_PLUGIN = "True";
@@ -189,7 +189,7 @@ in
         }
       ];
       shellInit = ''
-        set -g EDITOR "nvim"
+        set -g EDITOR "emacsclient"
         set -U fish_greeting
 
         set -g hydro_multiline true
