@@ -428,8 +428,8 @@ in
       nixpkgs-fmt
       mermaid-cli
       sqlfluff
-      nodePackages_latest.prettier
-      nodePackages_latest.sql-formatter
+      prettier
+      sql-formatter
       typescript
       typescript-language-server
       yaml-language-server
