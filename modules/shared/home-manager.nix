@@ -47,7 +47,7 @@ in
         rebase.autoStash = true;
         pull.rebase = true;
         init.defaultBranch = "main";
-        push.default = "tracking";
+        push.default = "simple";
         hub.host = "ghe.spotify.net";
         hub.protocol = "ssh";
         github.user = "regadas";
