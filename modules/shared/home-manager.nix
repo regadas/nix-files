@@ -230,6 +230,8 @@ in
     fzf = {
       enable = true;
 
+      defaultOptions = [ "--color=light" ];
+
       fileWidgetOptions = [
         "--preview '${
           lib.getExe pkgs.bat
