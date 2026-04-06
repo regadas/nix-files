@@ -23,8 +23,6 @@
     ];
     
     # Performance optimizations
-    keep-outputs = true;             # Keep build dependencies to avoid rebuilds
-    keep-derivations = true;         # Keep derivation files for faster rebuilds
     fallback = true;                 # Build from source if binary fetch fails
     max-jobs = "auto";               # Use all available cores for building
     cores = 0;                       # Use all available cores per build job
