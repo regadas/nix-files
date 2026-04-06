@@ -48,8 +48,6 @@ in
         pull.rebase = true;
         init.defaultBranch = "main";
         push.default = "simple";
-        hub.host = "ghe.spotify.net";
-        hub.protocol = "ssh";
         github.user = "regadas";
         github."ghe.spotify.net/api/v3".user = "regadas";
       };
@@ -161,7 +159,6 @@ in
 
       shellAliases = {
         cat = "bat";
-        git = "hub";
         k = "kubectl";
       };
     };
@@ -215,7 +212,6 @@ in
 
       shellAliases = {
         cat = "bat";
-        git = "hub";
         k = "kubectl";
       };
     };
@@ -402,7 +398,6 @@ in
       duf
       html-tidy
       gettext
-      hub
       gh
       gnupg
       gnused
