@@ -460,7 +460,6 @@ in
       trino-cli
       watch
       wget
-      yarn2nix
       yq-go
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
