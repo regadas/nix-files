@@ -17,6 +17,8 @@ in
       vimAlias = true;
 
       withNodeJs = true;
+      withRuby = false;
+      withPython3 = false;
     };
 
     btop.enable = true;
