@@ -2,14 +2,14 @@
 
 pkgs.buildNpmPackage rec {
   pname = "claude-agent-acp";
-  version = "0.28.0";
+  version = "0.29.0";
   src = pkgs.fetchFromGitHub {
     owner = "zed-industries";
     repo = "claude-agent-acp";
     rev = "v${version}";
-    hash = "sha256-b7hKmdTE2i1Lnz8WDP47ZTwbZbXLAoctXfTGcEzG09w=";
+    hash = "sha256-L2Kq4Lk5gHqE9rpBnrKcWXMaSQqEZHtcayjGnK4fYEQ=";
   };
-  npmDepsHash = "sha256-PmYWrXNC05536DnTCHyYFTCjMwTdDF+RXPqgG+7vT2U=";
+  npmDepsHash = "sha256-CEB4zgWC+jVpqmwbSCwE9xWoi+XiVkpNiXpDzsvbhII=";
   meta = {
     description = "Zed's Claude Agent ACP bridge";
     homepage = "https://github.com/zed-industries/claude-agent-acp";
