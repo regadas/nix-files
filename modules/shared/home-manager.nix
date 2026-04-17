@@ -26,6 +26,8 @@ in
     git = {
       enable = true;
 
+      lfs.enable = true;
+
       signing = {
         format = "openpgp";
         key = "55A043A0";
@@ -389,6 +391,7 @@ in
       hugo
       # colima
       act
+      bazelisk
       # bazel_7
       bazel-buildtools
       coreutils
