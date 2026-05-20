@@ -4,11 +4,17 @@ let
   mdopen = pkgs.callPackage ../../packages/mdopen.nix {};
   claude-agent-acp = pkgs.callPackage ../../packages/claude-agent-acp.nix {};
   codex-acp = pkgs.callPackage ../../packages/codex-acp.nix {};
+  pi-acp = pkgs.callPackage ../../packages/pi-acp.nix {};
+  pi-coding-agent = pkgs.callPackage ../../packages/pi-coding-agent.nix {};
 in
 {
   # Disable Home Manager release check since we're using flake pinning
   home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "24.11";
+
+  home.sessionVariables = {
+    NPM_CONFIG_PREFIX = "$HOME/.local";
+  };
 
   programs = {
     neovim = {
@@ -346,6 +352,8 @@ in
       mdopen
       claude-agent-acp
       codex-acp
+      pi-acp
+      # pi-coding-agent
       copilot-language-server
       obsidian
       sesh
