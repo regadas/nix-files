@@ -1,43 +1,43 @@
 { pkgs, lib, ... }:
 
 let
-  version = "0.15.0";
+  version = "0.16.0";
   binaryPackages = {
     darwin-arm64 = {
       cpu = [ "arm64" ];
       os = [ "darwin" ];
       executable = "bin/codex-acp";
-      integrity = "sha512-9/tnj1fXeXIONgr+5FGwr3bkqd4jaORdr3X9/k++rzHW+UIzvgIeXrJKv43403gtuKp0BoxdzsFxe2qsAQhhkw==";
+      integrity = "sha512-2AmbWsc/+Mpn6U8UOIlPLvgwGsGOr/LFpgcvrnjcCT9V1yY92MLrqzjMX82+VjTrRLRuXvc25SB5Z1++4Pw29g==";
     };
     darwin-x64 = {
       cpu = [ "x64" ];
       os = [ "darwin" ];
       executable = "bin/codex-acp";
-      integrity = "sha512-2cmflnVYM5yzvNu4ldff6OsfLzQThFToPszCT3t7jytWuG28V+W1cUEGsvFJGNkGC1Wo29Z4w5LZ3wyfOkvPxg==";
+      integrity = "sha512-QCWggk0s4GTPLCR7eznyx29Dls4gzUKvp4MjZ4nzPX5gDL/02PGY+oCV1WsQOsnzWRK0RxM+GlK19rG1qzqplw==";
     };
     linux-arm64 = {
       cpu = [ "arm64" ];
       os = [ "linux" ];
       executable = "bin/codex-acp";
-      integrity = "sha512-ioCXCiZMd4v7Eqyed9Iz4xcPKsZbSH157wOitsWQKxUiX43c1Ti5fykZcrh9cNSLOgiGmI3V2nbYp0aTf66grQ==";
+      integrity = "sha512-8HaZGWVPVs1N6yqImLCKlnlcYTYc9BMCEhaVJk0ON9lyofhK9mOBBAHQndKC4Scqq5JLUHQIOyb8+jwHUe3hSQ==";
     };
     linux-x64 = {
       cpu = [ "x64" ];
       os = [ "linux" ];
       executable = "bin/codex-acp";
-      integrity = "sha512-WtqI8KGX9z7XvdkazumYraoDwpip5lFBRtFXoIwYCSBoDZdOqQsfNQndIfTDttfQ1BdZYKczDnrfbRaiIFU9UA==";
+      integrity = "sha512-xs5zZBLpJuciEbZNx6ZSNL0qCa9h3i/zWpj40sp6QtF+L4Ow/7qzHdBzboGhHdcz1jrLedfZeRFDA2Elj8TLMA==";
     };
     win32-arm64 = {
       cpu = [ "arm64" ];
       os = [ "win32" ];
       executable = "bin/codex-acp.exe";
-      integrity = "sha512-L+OFIPOzAuxsImlq8E227MZxgujMLMEJSqiR9QjZq8fiIFCKh/HnxmvyXvjWaHbJdb1pZ09WKe3MNwV9ln/+GQ==";
+      integrity = "sha512-4V3pDJvEyNkgVqWqlm0bLYEZ8liGXXp8InuHzCy5cgr+SFur6BuasA29tisN8NUrLus/ZvMhXCrOsNKurYAWQw==";
     };
     win32-x64 = {
       cpu = [ "x64" ];
       os = [ "win32" ];
       executable = "bin/codex-acp.exe";
-      integrity = "sha512-LDnADpCg1Rzbkyxs4hMaOvRwNa68KLp8CoNVom8ZE/sChSvcDrj/RCoMsZWrARJGWs7EQ9zYeLoeVk5VcVQoPQ==";
+      integrity = "sha512-ZriI/ay5E3DCg8s22LZykIRI2XzQL6sZg/t81K+6qc86ldscaSWQSOT6KSnRcv31QJCMfBlFxMj22pZiGSVjQA==";
     };
   };
 
@@ -83,13 +83,13 @@ pkgs.buildNpmPackage rec {
     owner = "zed-industries";
     repo = "codex-acp";
     rev = "v${version}";
-    hash = "sha256-XSy0qJudzt5ZN9TWQsWhKvfKkPBPAH7vF1RV96P268w=";
+    hash = "sha256-LeD3nHvRWX4ZgZ3/fVngDcR6/LtaY4eb2M2WmWaymlY=";
   };
   sourceRoot = "${src.name}/npm";
   postPatch = ''
     cp ${packageLockFile} package-lock.json
   '';
-  npmDepsHash = "sha256-eqTjpOm9k/V2snOu0u0EJana8h/O87KhUfP2lh0jojg=";
+  npmDepsHash = "sha256-QLiywaicKcVGTDwcNzVCI5/NnOWMteCLeaye5LtxINo=";
   dontNpmBuild = true;
   meta = {
     description = "An ACP-compatible coding agent powered by Codex";
