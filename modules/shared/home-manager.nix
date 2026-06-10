@@ -71,7 +71,7 @@ in
         ".DS_Store"
         ".projectile"
         ".direnv"
-        ".claude/setting.local.json"
+        ".claude/settings.local.json"
         ".agent-shell"
       ];
     };
