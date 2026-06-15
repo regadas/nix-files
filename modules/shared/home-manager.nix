@@ -351,6 +351,12 @@ in
     [
       mdopen
       claude-agent-acp
+      # d2 0.7.x gates its Linux-only graphics deps (libgbm, playwright
+      # browsers -> libdrm) behind `libdrm.meta.available`. Our global
+      # `allowUnsupportedSystem = true` forces that to `true` on darwin, so
+      # those inputs leak in and libdrm fails to build ("unsupported OS:
+      # darwin"). Drop them on darwin to match upstream's intended behavior.
+      (if stdenv.isDarwin then d2.overrideAttrs (_: { buildInputs = [ ]; }) else d2)
       codex-acp
       pi-acp
       # pi-coding-agent
@@ -385,7 +391,6 @@ in
       krew
       marksman
       httpie
-      d2
       google-cloud-sql-proxy
       k9s
       pluto
