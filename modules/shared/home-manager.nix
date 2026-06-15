@@ -464,7 +464,6 @@ in
       scala-cli
       scalafmt
       shellcheck
-      silver-searcher
       trino-cli
       watch
       wget
