@@ -25,6 +25,12 @@ in
       withNodeJs = true;
       withRuby = false;
       withPython3 = false;
+
+      # Load Home Manager's generated init (Node provider, etc.) via wrapper
+      # args instead of writing ~/.config/nvim/init.lua. This keeps our own
+      # externally-managed LazyVim config (git repo in ~/.config/nvim)
+      # authoritative and avoids clobbering its init.lua on activation.
+      sideloadInitLua = true;
     };
 
     btop.enable = true;
