@@ -2,14 +2,14 @@
 
 pkgs.buildNpmPackage rec {
   pname = "pi-acp";
-  version = "0.0.28";
+  version = "0.0.31";
   src = pkgs.fetchFromGitHub {
     owner = "svkozak";
     repo = "pi-acp";
     rev = "v${version}";
-    hash = "sha256-Hv5AeNJTnfXAowQFSWAWzKk/03G/H2JVTS7KLafpRGg=";
+    hash = "sha256-bM3V/3fxkY2Ib+OyfT82StIIRSLXGDuYUbt1CZKpTuo=";
   };
-  npmDepsHash = "sha256-/k//AikjjJNUkA38O/gXh4yEk/E52+ue6BI/SwRCa8k=";
+  npmDepsHash = "sha256-qN+b/tMbnJLkWjotl3XrA0nfZ3KT/mT6gM+n3Qiz8Wk=";
   meta = {
     description = "ACP adapter for pi coding agent";
     homepage = "https://github.com/svkozak/pi-acp";
