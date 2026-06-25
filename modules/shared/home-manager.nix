@@ -403,6 +403,7 @@ in
       dockerfile-language-server
       ltex-ls
       languagetool
+      nil
       nixd
       jdt-language-server
       texlab
@@ -445,6 +446,8 @@ in
       minikube
       nixfmt
       nixpkgs-fmt
+      statix
+      deadnix
       mermaid-cli
       sqlfluff
       prettier
@@ -479,6 +482,7 @@ in
       watch
       wget
       yq-go
+      gatekeeper
     ] ++ lib.optionals stdenv.isDarwin [
       cocoapods
       m-cli # useful macOS CLI commands
