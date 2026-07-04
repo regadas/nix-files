@@ -383,7 +383,7 @@ in
       ruby-lsp
       just-lsp
       devenv
-      duckdb
+      # duckdb
       fd
       hadolint
       avro-tools
@@ -427,8 +427,8 @@ in
       gnupg
       gnused
       go
-      (google-cloud-sdk.withExtraComponents
-        [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+      # (google-cloud-sdk.withExtraComponents
+      #   [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       gopls
       gradle
       graphviz-nox
