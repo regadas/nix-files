@@ -7,6 +7,16 @@
   # Add ability to used TouchID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  # nix-darwin (latest master, 2026-06-18) still calls `nixos-render-docs
+  # manual html --toc-depth`, but nixpkgs removed that flag on 2026-07-02
+  # (use --sidebar-depth). Disable the generated manual/help until nix-darwin
+  # catches up; re-enable once upstream adopts the new flag.
+  documentation.enable = false;
+  # darwin-uninstaller builds its own isolated nix-darwin system with
+  # documentation defaulted on, so the setting above can't reach it and it
+  # hits the same --toc-depth failure. Disable it too (rarely-used tool).
+  system.tools.darwin-uninstaller.enable = false;
+
   services.yabai.enable = true;
   services.yabai.package = pkgs.yabai;
   services.skhd.enable = true;
