@@ -244,12 +244,12 @@ in
 
       defaultOptions = [ "--color=light" ];
 
-      fileWidgetOptions = [
+      fileWidget.options = [
         "--preview '${
           lib.getExe pkgs.bat
         } --color=always --plain --line-range=:200 {}'"
       ];
-      changeDirWidgetOptions =
+      changeDirWidget.options =
         [ "--preview '${lib.getExe pkgs.tree}  -C {} | head -200'" ];
     };
 
