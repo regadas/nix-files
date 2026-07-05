@@ -365,6 +365,7 @@ in
       (if stdenv.isDarwin then d2.overrideAttrs (_: { buildInputs = [ ]; }) else d2)
       codex-acp
       pi-acp
+      herdr
       # pi-coding-agent
       copilot-language-server
       obsidian
