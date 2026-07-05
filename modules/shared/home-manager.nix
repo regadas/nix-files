@@ -266,25 +266,20 @@ in
       '';
     };
 
-    alacritty = {
+    ghostty = {
       enable = true;
+      # ghostty (source) is Linux-only in nixpkgs; ghostty-bin ships the
+      # prebuilt macOS app and supports aarch64/x86_64-darwin.
+      package = pkgs.ghostty-bin;
       settings = {
-        window = {
-          # decorations = "none";
-          option_as_alt = "Both";
-        };
-        font = {
-          size = 16;
-          normal = { family = "Iosevka SS14"; };
-          bold = {
-            family = "Iosevka SS14";
-            style = "bold";
-          };
-          italic = {
-            family = "Iosevka SS14";
-            style = "italic";
-          };
-        };
+        theme = "Catppuccin Mocha";
+        font-family = "Iosevka SS14";
+        font-size = 15;
+        alpha-blending = "linear-corrected";
+        macos-titlebar-style = "tabs";
+        macos-titlebar-proxy-icon = "hidden";
+        macos-option-as-alt = true;
+        keybind = [ "shift+enter=text:\\n" ];
       };
     };
 
