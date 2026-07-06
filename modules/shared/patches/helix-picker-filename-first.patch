@@ -1,0 +1,28 @@
+--- a/helix-term/src/ui/mod.rs
++++ b/helix-term/src/ui/mod.rs
+@@ -249,18 +249,19 @@
+         "path",
+         |item: &PathBuf, data: &FilePickerData| {
+             let path = item.strip_prefix(&data.root).unwrap_or(item);
+-            let mut spans = Vec::with_capacity(3);
++            let mut spans = Vec::with_capacity(4);
++            let filename = path
++                .file_name()
++                .expect("normalized paths can't end in `..`")
++                .to_string_lossy();
++            spans.push(Span::raw(filename));
+             if let Some(dirs) = path.parent().filter(|p| !p.as_os_str().is_empty()) {
+                 spans.extend([
++                    Span::raw("  "),
+                     Span::styled(dirs.to_string_lossy(), data.directory_style),
+                     Span::styled(std::path::MAIN_SEPARATOR_STR, data.directory_style),
+                 ]);
+             }
+-            let filename = path
+-                .file_name()
+-                .expect("normalized paths can't end in `..`")
+-                .to_string_lossy();
+-            spans.push(Span::raw(filename));
+             Spans::from(spans).into()
+         },
+     )];

@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }:
 
 let
-  mdopen = pkgs.callPackage ../../packages/mdopen.nix {};
-  claude-agent-acp = pkgs.callPackage ../../packages/claude-agent-acp.nix {};
-  codex-acp = pkgs.callPackage ../../packages/codex-acp.nix {};
-  pi-acp = pkgs.callPackage ../../packages/pi-acp.nix {};
-  pi-coding-agent = pkgs.callPackage ../../packages/pi-coding-agent.nix {};
+  mdopen = pkgs.callPackage ../../packages/mdopen.nix { };
+  jdtls-wrapper = pkgs.callPackage ../../packages/jdtls-wrapper.nix { };
+  claude-agent-acp = pkgs.callPackage ../../packages/claude-agent-acp.nix { };
+  codex-acp = pkgs.callPackage ../../packages/codex-acp.nix { };
+  pi-acp = pkgs.callPackage ../../packages/pi-acp.nix { };
+  pi-coding-agent = pkgs.callPackage ../../packages/pi-coding-agent.nix { };
 in
 {
   # Disable Home Manager release check since we're using flake pinning
@@ -31,6 +32,192 @@ in
       # externally-managed LazyVim config (git repo in ~/.config/nvim)
       # authoritative and avoids clobbering its init.lua on activation.
       sideloadInitLua = true;
+    };
+
+    # Helix — configured to mirror the Doom Emacs setup (~/.doom.d):
+    #   * modal editing (native), with evil-style "jj" -> normal escape
+    #   * relative line numbers, format-on-save, rich statusline
+    #   * LSP + formatters for the same languages Doom enables. All servers
+    #     are already provided by home.packages and resolved on $PATH; Helix
+    #     derives `command = <server-name>` when no explicit block is given.
+    helix = {
+      enable = true;
+
+      # Keep emacsclient as $EDITOR (set in fish/nushell); don't hijack it.
+      defaultEditor = false;
+
+      # Patched picker: show "filename  dir/" (VS Code Quick-Open style)
+      # instead of "dir/filename". No upstream config option exists for this
+      # (as of 25.07.1); rebase the patch when nixpkgs bumps helix.
+      package = pkgs.helix.overrideAttrs (old: {
+        patches = (old.patches or [ ]) ++ [
+          ./patches/helix-picker-filename-first.patch
+        ];
+      });
+
+      settings = {
+        # Match the terminals (Ghostty / WezTerm both use Catppuccin Mocha).
+        theme = "catppuccin_mocha";
+
+        editor = {
+          line-number = "relative"; # Doom: display-line-numbers-type 'relative
+          mouse = true;
+          bufferline = "multiple";
+          color-modes = true;
+          cursorline = true;
+          true-color = true;
+          completion-trigger-len = 1;
+          idle-timeout = 250; # Doom: lsp-idle-delay 0.25
+          rulers = [ ];
+          auto-format = true; # Doom: :editor format (format on save)
+
+          cursor-shape = {
+            insert = "bar";
+            normal = "block";
+            select = "underline";
+          };
+
+          file-picker.hidden = false;
+
+          lsp = {
+            display-messages = true;
+            display-inlay-hints = false; # Doom kept lsp lens/inlay noise off
+          };
+
+          indent-guides.render = false; # Doom: indent-guides disabled
+          soft-wrap.enable = false; # Doom: word-wrap disabled
+
+          statusline = {
+            left = [
+              "mode"
+              "spinner"
+              "version-control"
+              "file-name"
+              "read-only-indicator"
+              "file-modification-indicator"
+            ];
+            center = [ ];
+            right = [
+              "diagnostics"
+              "selections"
+              "register"
+              "position"
+              "file-encoding"
+              "file-line-ending"
+              "file-type"
+            ];
+            mode = {
+              normal = "NORMAL";
+              insert = "INSERT";
+              select = "SELECT";
+            };
+          };
+        };
+
+        # evil-escape-key-sequence "jj": press jj in insert mode to escape.
+        keys.insert.j.j = "normal_mode";
+      };
+
+      languages = {
+        language-server = {
+          # pyright is not in Helix's default python server list; add it so we
+          # match Doom's (python +pyright).
+          pyright = {
+            command = "pyright-langserver";
+            args = [ "--stdio" ];
+          };
+          # Java: front jdtls with jdtls-wrapper so go-to-definition works for
+          # dependencies. jdtls returns `jdt://` URIs for compiled classes that
+          # Helix cannot open; the wrapper translates them to `file://`.
+          # `classFileContentsSupport` makes jdtls emit the class contents, and
+          # downloadSources prefers real source jars over decompiled bytecode.
+          jdtls = {
+            command = "jdtls-wrapper";
+            config = {
+              extendedClientCapabilities.classFileContentsSupport = true;
+              java.maven.downloadSources = true;
+              java.eclipse.downloadSources = true;
+            };
+          };
+        };
+
+        language = [
+          {
+            name = "nix";
+            language-servers = [ "nixd" "nil" ]; # prefer nixd; both installed
+            formatter.command = "nixpkgs-fmt"; # repo convention (AGENTS.md)
+            auto-format = true;
+          }
+          {
+            name = "python";
+            language-servers = [ "pyright" ]; # Doom: +pyright
+          }
+          {
+            name = "java";
+            language-servers = [ "jdtls" ];
+            indent = {
+              tab-width = 4;
+              unit = "    ";
+            };
+          }
+          {
+            name = "json";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "json" ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "yaml";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "yaml" ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "markdown";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "markdown" ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "typescript";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "typescript" ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "tsx";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "typescript" ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "javascript";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "babel" ];
+            };
+            auto-format = true;
+          }
+          {
+            name = "jsx";
+            formatter = {
+              command = "prettier";
+              args = [ "--parser" "babel" ];
+            };
+            auto-format = true;
+          }
+        ];
+      };
     };
 
     btop.enable = true;
@@ -351,6 +538,7 @@ in
   home.packages = with pkgs;
     [
       mdopen
+      jdtls-wrapper
       claude-agent-acp
       # d2 0.7.x gates its Linux-only graphics deps (libgbm, playwright
       # browsers -> libdrm) behind `libdrm.meta.available`. Our global
