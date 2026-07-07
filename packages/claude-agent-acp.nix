@@ -2,14 +2,14 @@
 
 pkgs.buildNpmPackage rec {
   pname = "claude-agent-acp";
-  version = "0.56.0";
+  version = "0.57.0";
   src = pkgs.fetchFromGitHub {
     owner = "agentclientprotocol";
     repo = "claude-agent-acp";
     rev = "v${version}";
-    hash = "sha256-W/ui08oFlG2g91Vz4tkL+tSNoMFqswkP9jAXF0N1/Y4=";
+    hash = "sha256-AeIXSj+PWX5NwaC3K1VgY2PxhfhAWp60djeO191gSXg=";
   };
-  npmDepsHash = "sha256-6UWfi1J7EqkIyqFmUArbdBTcKi7Nn39e/ZHW4A+nAwc=";
+  npmDepsHash = "sha256-owpYw1g1USNIx8RHb3CXevlDhtboKv89oiwIDCwhsFg=";
   meta = {
     description = "Claude Agent ACP bridge";
     homepage = "https://github.com/agentclientprotocol/claude-agent-acp";
