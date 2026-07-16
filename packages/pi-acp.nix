@@ -9,12 +9,12 @@ pkgs.buildNpmPackage rec {
   # mitigates Zed worktree scanner runaway. Drop back to the upstream release
   # once equivalent fixes are merged (see
   # svkozak/pi-acp issues #59/#70 and PRs #61/#69).
-  version = "0.0.31-unstable-2026-07-15";
+  version = "0.0.31-unstable-2026-07-15-0a5122a0";
   src = pkgs.fetchFromGitHub {
     owner = "regadas";
     repo = "pi-acp";
-    rev = "fe794c523e25981db24060841e512f75e8dd1260";
-    hash = "sha256-FViHOWTe01Ia1pZm+yYkD5vCNeiG/uU/aaPjVBpm3Fg=";
+    rev = "0a5122a050f2cc8affc319079c191b90d494ac10";
+    hash = "sha256-nr5A3PYCeg7AfQ51jfSqmEdkaR9V2L5AtGmdRvg2CdA=";
   };
   npmDepsHash = "sha256-UDqVwbrUGLy25T7akmsUnfXfPJ+lLTuRjRSQMYdyjDM=";
   meta = {
