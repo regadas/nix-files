@@ -266,6 +266,7 @@ in
         ".direnv"
         ".claude/settings.local.json"
         ".agent-shell"
+        ".pi-subagents"
       ];
     };
 
