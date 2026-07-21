@@ -4,14 +4,15 @@ pkgs.buildNpmPackage rec {
   pname = "pi-acp";
   # Independently maintained continuation of svkozak/pi-acp. Provides stable
   # ACP v1 lifecycle/history replay, strict subprocess ownership and timeout
-  # quarantine, atomic session mapping, negotiated auth/terminal behavior, and
-  # model-aware thinking levels. Requires pi >= 0.80.4.
-  version = "0.1.0-unstable-2026-07-17-96a27039";
+  # quarantine, autonomous-run prompt serialization, atomic session mapping,
+  # negotiated auth/terminal behavior, and model-aware thinking levels.
+  # Requires pi >= 0.80.4.
+  version = "0.1.0-unstable-2026-07-21-31068af";
   src = pkgs.fetchFromGitHub {
     owner = "regadas";
     repo = "pi-acp";
-    rev = "96a27039d483964e110c9d54352dfadb122f957e";
-    hash = "sha256-XwYPWfVVUE9/qlJ/FKdcNwAGs2UVMerDMHJYlud4/Dc=";
+    rev = "31068af9ac0b66f2bdf612b32dfdf9d3851351f6";
+    hash = "sha256-iPjK1prnWu1NWYsi8s3TU7rmxhq0tcEsikQcQHU87W0=";
   };
   npmDepsHash = "sha256-o/PZJPyWSlIwTCCvFgvFgx8EjsTH+dW2pK6MOEgoIbM=";
   meta = {
