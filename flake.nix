@@ -41,7 +41,14 @@
       # Helper function for standalone home-manager configs
       mkHomeConfig = { system, username ? "regadas" }: 
         home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs-unstable.legacyPackages.${system};
+          pkgs = import nixpkgs-unstable {
+            inherit system;
+            # Match the nix-darwin package policy for standalone Home Manager.
+            config = {
+              allowUnfree = true;
+              allowUnsupportedSystem = true;
+            };
+          };
           modules = [
             ./modules/shared/home-manager.nix
             {
