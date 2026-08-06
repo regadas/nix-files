@@ -610,8 +610,8 @@ in
       gnupg
       gnused
       go
-      # (google-cloud-sdk.withExtraComponents
-      #   [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+      (google-cloud-sdk.withExtraComponents
+        [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       gopls
       gradle
       graphviz-nox
@@ -626,7 +626,7 @@ in
       leiningen
       maven
       metals
-      minikube
+      (lib.lowPrio minikube)
       nixfmt
       nixpkgs-fmt
       statix
