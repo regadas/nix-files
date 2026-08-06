@@ -536,6 +536,7 @@ in
 
   home.packages = with pkgs;
     [
+      lazygit
       mdopen
       jdtls-wrapper
       claude-agent-acp
