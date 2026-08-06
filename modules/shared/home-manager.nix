@@ -551,7 +551,6 @@ in
       herdr
       # pi-coding-agent
       copilot-language-server
-      obsidian
       sesh
       cachix
       gemini-cli-bin
