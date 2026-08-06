@@ -46,15 +46,6 @@ in
       # Keep emacsclient as $EDITOR (set in fish/nushell); don't hijack it.
       defaultEditor = false;
 
-      # Patched picker: show "filename  dir/" (VS Code Quick-Open style)
-      # instead of "dir/filename". No upstream config option exists for this
-      # (as of 25.07.1); rebase the patch when nixpkgs bumps helix.
-      package = pkgs.helix.overrideAttrs (old: {
-        patches = (old.patches or [ ]) ++ [
-          ./patches/helix-picker-filename-first.patch
-        ];
-      });
-
       settings = {
         # Match the terminals (Ghostty / WezTerm both use Catppuccin Mocha).
         theme = "catppuccin_mocha";
