@@ -422,6 +422,7 @@ in
       enable = true;
 
       defaultOptions = [ "--color=light" ];
+      historyWidget.command = "";
 
       fileWidget.options = [
         "--preview '${
@@ -520,10 +521,16 @@ in
     };
 
     atuin = {
-      enable = false;
+      enable = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;
+      forceOverwriteSettings = true;
       daemon.enable = true;
+
+      settings = {
+        enter_accept = false;
+        sync.records = true;
+      };
     };
   };
 
