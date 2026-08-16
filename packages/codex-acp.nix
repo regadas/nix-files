@@ -2,14 +2,14 @@
 
 pkgs.buildNpmPackage rec {
   pname = "codex-acp";
-  version = "1.1.4";
+  version = "1.4.0";
   src = pkgs.fetchFromGitHub {
     owner = "agentclientprotocol";
     repo = "codex-acp";
     rev = "v${version}";
-    hash = "sha256-oBg/i4ewa6dF7d/lK0JaNOCBrgXTdsltLB+xvwXAV7E=";
+    hash = "sha256-9oUtDBE1HINQaJhk4Le5GWN3YODNwDpRaVZlnDV9a5c=";
   };
-  npmDepsHash = "sha256-r1c2Z2TbcU0X6mUdF5jpu3ldLnK+Yd+r0qQzjRHJ0mw=";
+  npmDepsHash = "sha256-tHnOMBXerUKBqTQM+jbXT3F9wgodvP6xdWJd7XNwhxE=";
   meta = {
     description = "An ACP-compatible coding agent powered by Codex";
     homepage = "https://github.com/agentclientprotocol/codex-acp";
