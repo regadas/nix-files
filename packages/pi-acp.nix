@@ -7,14 +7,14 @@ pkgs.buildNpmPackage rec {
   # quarantine, autonomous-run prompt serialization, atomic session mapping,
   # negotiated auth/terminal behavior, and model-aware thinking levels.
   # Requires pi >= 0.80.4.
-  version = "0.1.0-unstable-2026-08-16-f2f0f51";
+  version = "0.1.0-unstable-2026-08-16-a790a02";
   src = pkgs.fetchFromGitHub {
     owner = "regadas";
     repo = "pi-acp";
-    rev = "f2f0f51f46bef170b7b7987462039f534c10de45";
-    hash = "sha256-rRGGarK5DqUR2wWy6/sxOWpv0Yg79nMfFEJI/ERFXc8=";
+    rev = "a790a026a179185107c231a3021b0926c0deb257";
+    hash = "sha256-Zw9MHyjf2V+WiH7pQqgVv/F6A4hPftRqktCDBW6Uhvw=";
   };
-  npmDepsHash = "sha256-o/PZJPyWSlIwTCCvFgvFgx8EjsTH+dW2pK6MOEgoIbM=";
+  npmDepsHash = "sha256-yvWPSLw1N2v43/5Wb4W+k2UJhgl2Jfhdk5dBcQFqfNo=";
   meta = {
     description = "Independently maintained ACP adapter for pi coding agent";
     homepage = "https://github.com/regadas/pi-acp";
