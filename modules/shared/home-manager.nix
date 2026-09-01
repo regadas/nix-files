@@ -258,6 +258,8 @@ in
         ".claude/settings.local.json"
         ".agent-shell"
         ".pi-subagents"
+        ".pi/subagents"
+        ".pi/reviews"
       ];
     };
 
