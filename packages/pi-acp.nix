@@ -7,12 +7,12 @@ pkgs.buildNpmPackage rec {
   # quarantine, autonomous-run prompt serialization, atomic session mapping,
   # negotiated auth/terminal behavior, and model-aware thinking levels.
   # Requires pi >= 0.80.4.
-  version = "0.1.0-unstable-2026-08-25-b1a6d71";
+  version = "0.1.0-unstable-2026-09-01-9736b31";
   src = pkgs.fetchFromGitHub {
     owner = "regadas";
     repo = "pi-acp";
-    rev = "b1a6d712408a9a5306442a7b5325742691fbc03a";
-    hash = "sha256-3mQdzMsMKua5czYembgBIsTG6rcXag+1YEtSHrTlD38=";
+    rev = "9736b31ee98f491903aa6edab855613bd4b1aa26";
+    hash = "sha256-Au1KHJtITNfIxvz8lGCvk2MZE1IjrqxJxRe9dn7RwUU=";
   };
   npmDepsHash = "sha256-yvWPSLw1N2v43/5Wb4W+k2UJhgl2Jfhdk5dBcQFqfNo=";
   meta = {
