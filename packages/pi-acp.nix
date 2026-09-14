@@ -15,6 +15,18 @@ pkgs.buildNpmPackage rec {
     hash = "sha256-P+KBjYOD7hrNyMo0XYVsm+vc1LTp3ZVnFT30/nkoPAc=";
   };
   npmDepsHash = "sha256-2m3LF5XGbrlNodVGEjLTRg6najJujAe6Rrbj8/PhcMw=";
+  # Validate in checkPhase, not again in npm pack's prepack hook.
+  npmPackFlags = [ "--ignore-scripts" ];
+  doCheck = true;
+  checkPhase = ''
+    runHook preCheck
+    npm run format:check
+    npm run typecheck
+    npm run lint
+    # Avoid competing test processes exhausting the FIFO test's timeout.
+    npm test -- --test-concurrency=1
+    runHook postCheck
+  '';
   meta = {
     description = "Independently maintained ACP adapter for pi coding agent";
     homepage = "https://github.com/regadas/pi-acp";
