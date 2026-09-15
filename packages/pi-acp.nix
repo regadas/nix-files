@@ -7,12 +7,12 @@ pkgs.buildNpmPackage rec {
   # quarantine, autonomous-run prompt serialization, atomic session mapping,
   # negotiated auth/terminal behavior, and model-aware thinking levels.
   # Requires pi >= 0.80.4.
-  version = "0.1.0-unstable-2026-09-15-79113f0";
+  version = "0.1.0-unstable-2026-09-15-3f46f29";
   src = pkgs.fetchFromGitHub {
     owner = "regadas";
     repo = "pi-acp";
-    rev = "79113f0ed846e3c28167d2a1bd800340a956bc23";
-    hash = "sha256-ygqhYQBsUJks9P88Zfm+5FA6u9AK66g1jdXgFt0VFhU=";
+    rev = "3f46f29c7844b0d40df2fd1df6f0ace9d24378da";
+    hash = "sha256-WNcIwIGLJoGIU0KtBpr3eW5WjbFXJQOYMJTs242w1qk=";
   };
   npmDepsHash = "sha256-9Z+rHeVkkP3ypBQcd07Txi3lvwoqEGxgiuw4Cc7FRWs=";
   # Validate in checkPhase, not again in npm pack's prepack hook.
